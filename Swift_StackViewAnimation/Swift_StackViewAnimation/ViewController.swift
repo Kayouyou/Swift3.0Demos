@@ -20,6 +20,20 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    
+    @IBOutlet var emojiAutoButtons: [UIButton]!{
+        
+        didSet{
+            
+            emojiAutoButtons.forEach{
+                
+                $0.isHidden = true;
+                
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -35,6 +49,16 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func autoButtonTap(_ sender: UIButton) {
+    
+        UIView.animate(withDuration: 0.3) { 
+            
+            self.emojiAutoButtons.forEach({
+            
+                $0.isHidden = !$0.isHidden
+            })
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
