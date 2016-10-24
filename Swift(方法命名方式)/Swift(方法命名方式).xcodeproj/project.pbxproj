@@ -193,6 +193,7 @@
 				TargetAttributes = {
 					EF3A64141DBE4A6D00E8AC53 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 5ZG9E62T9E;
 						ProvisioningStyle = Automatic;
 					};
 					EF3A64281DBE4A6E00E8AC53 = {
@@ -412,6 +413,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5ZG9E62T9E;
 				INFOPLIST_FILE = "Swift(方法命名方式)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "yeyanyyang.Swift--------";
@@ -424,6 +426,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5ZG9E62T9E;
 				INFOPLIST_FILE = "Swift(方法命名方式)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "yeyanyyang.Swift--------";
