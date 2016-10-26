@@ -1,0 +1,532 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EF3A648D1DBE58D500E8AC53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3A648C1DBE58D500E8AC53 /* AppDelegate.swift */; };
+		EF3A648F1DBE58D500E8AC53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3A648E1DBE58D500E8AC53 /* ViewController.swift */; };
+		EF3A64921DBE58D500E8AC53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF3A64901DBE58D500E8AC53 /* Main.storyboard */; };
+		EF3A64941DBE58D500E8AC53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF3A64931DBE58D500E8AC53 /* Assets.xcassets */; };
+		EF3A64971DBE58D500E8AC53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF3A64951DBE58D500E8AC53 /* LaunchScreen.storyboard */; };
+		EF3A64A21DBE58D500E8AC53 /* SwiftSwizzing_RunTime_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3A64A11DBE58D500E8AC53 /* SwiftSwizzing_RunTime_Tests.swift */; };
+		EF3A64AD1DBE58D500E8AC53 /* SwiftSwizzing_RunTime_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3A64AC1DBE58D500E8AC53 /* SwiftSwizzing_RunTime_UITests.swift */; };
+		EF3A64BD1DBE599C00E8AC53 /* SwiftSwizzing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3A64BC1DBE599C00E8AC53 /* SwiftSwizzing.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EF3A649E1DBE58D500E8AC53 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF3A64811DBE58D500E8AC53 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF3A64881DBE58D500E8AC53;
+			remoteInfo = "SwiftSwizzing(RunTime)";
+		};
+		EF3A64A91DBE58D500E8AC53 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF3A64811DBE58D500E8AC53 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF3A64881DBE58D500E8AC53;
+			remoteInfo = "SwiftSwizzing(RunTime)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EF3A64891DBE58D500E8AC53 /* SwiftSwizzing(RunTime).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftSwizzing(RunTime).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF3A648C1DBE58D500E8AC53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EF3A648E1DBE58D500E8AC53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EF3A64911DBE58D500E8AC53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EF3A64931DBE58D500E8AC53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF3A64961DBE58D500E8AC53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EF3A64981DBE58D500E8AC53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF3A649D1DBE58D500E8AC53 /* SwiftSwizzing(RunTime)Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftSwizzing(RunTime)Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF3A64A11DBE58D500E8AC53 /* SwiftSwizzing_RunTime_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSwizzing_RunTime_Tests.swift; sourceTree = "<group>"; };
+		EF3A64A31DBE58D500E8AC53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF3A64A81DBE58D500E8AC53 /* SwiftSwizzing(RunTime)UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftSwizzing(RunTime)UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF3A64AC1DBE58D500E8AC53 /* SwiftSwizzing_RunTime_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSwizzing_RunTime_UITests.swift; sourceTree = "<group>"; };
+		EF3A64AE1DBE58D500E8AC53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF3A64BC1DBE599C00E8AC53 /* SwiftSwizzing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftSwizzing.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF3A64861DBE58D500E8AC53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF3A649A1DBE58D500E8AC53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF3A64A51DBE58D500E8AC53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EF3A64801DBE58D500E8AC53 = {
+			isa = PBXGroup;
+			children = (
+				EF3A648B1DBE58D500E8AC53 /* SwiftSwizzing(RunTime) */,
+				EF3A64A01DBE58D500E8AC53 /* SwiftSwizzing(RunTime)Tests */,
+				EF3A64AB1DBE58D500E8AC53 /* SwiftSwizzing(RunTime)UITests */,
+				EF3A648A1DBE58D500E8AC53 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EF3A648A1DBE58D500E8AC53 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF3A64891DBE58D500E8AC53 /* SwiftSwizzing(RunTime).app */,
+				EF3A649D1DBE58D500E8AC53 /* SwiftSwizzing(RunTime)Tests.xctest */,
+				EF3A64A81DBE58D500E8AC53 /* SwiftSwizzing(RunTime)UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF3A648B1DBE58D500E8AC53 /* SwiftSwizzing(RunTime) */ = {
+			isa = PBXGroup;
+			children = (
+				EF3A648C1DBE58D500E8AC53 /* AppDelegate.swift */,
+				EF3A648E1DBE58D500E8AC53 /* ViewController.swift */,
+				EF3A64BC1DBE599C00E8AC53 /* SwiftSwizzing.swift */,
+				EF3A64901DBE58D500E8AC53 /* Main.storyboard */,
+				EF3A64931DBE58D500E8AC53 /* Assets.xcassets */,
+				EF3A64951DBE58D500E8AC53 /* LaunchScreen.storyboard */,
+				EF3A64981DBE58D500E8AC53 /* Info.plist */,
+			);
+			path = "SwiftSwizzing(RunTime)";
+			sourceTree = "<group>";
+		};
+		EF3A64A01DBE58D500E8AC53 /* SwiftSwizzing(RunTime)Tests */ = {
+			isa = PBXGroup;
+			children = (
+				EF3A64A11DBE58D500E8AC53 /* SwiftSwizzing_RunTime_Tests.swift */,
+				EF3A64A31DBE58D500E8AC53 /* Info.plist */,
+			);
+			path = "SwiftSwizzing(RunTime)Tests";
+			sourceTree = "<group>";
+		};
+		EF3A64AB1DBE58D500E8AC53 /* SwiftSwizzing(RunTime)UITests */ = {
+			isa = PBXGroup;
+			children = (
+				EF3A64AC1DBE58D500E8AC53 /* SwiftSwizzing_RunTime_UITests.swift */,
+				EF3A64AE1DBE58D500E8AC53 /* Info.plist */,
+			);
+			path = "SwiftSwizzing(RunTime)UITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EF3A64881DBE58D500E8AC53 /* SwiftSwizzing(RunTime) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF3A64B11DBE58D500E8AC53 /* Build configuration list for PBXNativeTarget "SwiftSwizzing(RunTime)" */;
+			buildPhases = (
+				EF3A64851DBE58D500E8AC53 /* Sources */,
+				EF3A64861DBE58D500E8AC53 /* Frameworks */,
+				EF3A64871DBE58D500E8AC53 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SwiftSwizzing(RunTime)";
+			productName = "SwiftSwizzing(RunTime)";
+			productReference = EF3A64891DBE58D500E8AC53 /* SwiftSwizzing(RunTime).app */;
+			productType = "com.apple.product-type.application";
+		};
+		EF3A649C1DBE58D500E8AC53 /* SwiftSwizzing(RunTime)Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF3A64B41DBE58D500E8AC53 /* Build configuration list for PBXNativeTarget "SwiftSwizzing(RunTime)Tests" */;
+			buildPhases = (
+				EF3A64991DBE58D500E8AC53 /* Sources */,
+				EF3A649A1DBE58D500E8AC53 /* Frameworks */,
+				EF3A649B1DBE58D500E8AC53 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF3A649F1DBE58D500E8AC53 /* PBXTargetDependency */,
+			);
+			name = "SwiftSwizzing(RunTime)Tests";
+			productName = "SwiftSwizzing(RunTime)Tests";
+			productReference = EF3A649D1DBE58D500E8AC53 /* SwiftSwizzing(RunTime)Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EF3A64A71DBE58D500E8AC53 /* SwiftSwizzing(RunTime)UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF3A64B71DBE58D500E8AC53 /* Build configuration list for PBXNativeTarget "SwiftSwizzing(RunTime)UITests" */;
+			buildPhases = (
+				EF3A64A41DBE58D500E8AC53 /* Sources */,
+				EF3A64A51DBE58D500E8AC53 /* Frameworks */,
+				EF3A64A61DBE58D500E8AC53 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF3A64AA1DBE58D500E8AC53 /* PBXTargetDependency */,
+			);
+			name = "SwiftSwizzing(RunTime)UITests";
+			productName = "SwiftSwizzing(RunTime)UITests";
+			productReference = EF3A64A81DBE58D500E8AC53 /* SwiftSwizzing(RunTime)UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF3A64811DBE58D500E8AC53 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "叶杨杨";
+				TargetAttributes = {
+					EF3A64881DBE58D500E8AC53 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+					EF3A649C1DBE58D500E8AC53 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EF3A64881DBE58D500E8AC53;
+					};
+					EF3A64A71DBE58D500E8AC53 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EF3A64881DBE58D500E8AC53;
+					};
+				};
+			};
+			buildConfigurationList = EF3A64841DBE58D500E8AC53 /* Build configuration list for PBXProject "SwiftSwizzing(RunTime)" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EF3A64801DBE58D500E8AC53;
+			productRefGroup = EF3A648A1DBE58D500E8AC53 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF3A64881DBE58D500E8AC53 /* SwiftSwizzing(RunTime) */,
+				EF3A649C1DBE58D500E8AC53 /* SwiftSwizzing(RunTime)Tests */,
+				EF3A64A71DBE58D500E8AC53 /* SwiftSwizzing(RunTime)UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF3A64871DBE58D500E8AC53 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF3A64971DBE58D500E8AC53 /* LaunchScreen.storyboard in Resources */,
+				EF3A64941DBE58D500E8AC53 /* Assets.xcassets in Resources */,
+				EF3A64921DBE58D500E8AC53 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF3A649B1DBE58D500E8AC53 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF3A64A61DBE58D500E8AC53 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF3A64851DBE58D500E8AC53 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF3A64BD1DBE599C00E8AC53 /* SwiftSwizzing.swift in Sources */,
+				EF3A648F1DBE58D500E8AC53 /* ViewController.swift in Sources */,
+				EF3A648D1DBE58D500E8AC53 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF3A64991DBE58D500E8AC53 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF3A64A21DBE58D500E8AC53 /* SwiftSwizzing_RunTime_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF3A64A41DBE58D500E8AC53 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF3A64AD1DBE58D500E8AC53 /* SwiftSwizzing_RunTime_UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EF3A649F1DBE58D500E8AC53 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF3A64881DBE58D500E8AC53 /* SwiftSwizzing(RunTime) */;
+			targetProxy = EF3A649E1DBE58D500E8AC53 /* PBXContainerItemProxy */;
+		};
+		EF3A64AA1DBE58D500E8AC53 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF3A64881DBE58D500E8AC53 /* SwiftSwizzing(RunTime) */;
+			targetProxy = EF3A64A91DBE58D500E8AC53 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EF3A64901DBE58D500E8AC53 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF3A64911DBE58D500E8AC53 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EF3A64951DBE58D500E8AC53 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF3A64961DBE58D500E8AC53 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EF3A64AF1DBE58D500E8AC53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EF3A64B01DBE58D500E8AC53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EF3A64B21DBE58D500E8AC53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "SwiftSwizzing(RunTime)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "yeyanyyang.SwiftSwizzing-RunTime-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		EF3A64B31DBE58D500E8AC53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "SwiftSwizzing(RunTime)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "yeyanyyang.SwiftSwizzing-RunTime-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		EF3A64B51DBE58D500E8AC53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "SwiftSwizzing(RunTime)Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "yeyanyyang.SwiftSwizzing-RunTime-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftSwizzing(RunTime).app/SwiftSwizzing(RunTime)";
+			};
+			name = Debug;
+		};
+		EF3A64B61DBE58D500E8AC53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "SwiftSwizzing(RunTime)Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "yeyanyyang.SwiftSwizzing-RunTime-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftSwizzing(RunTime).app/SwiftSwizzing(RunTime)";
+			};
+			name = Release;
+		};
+		EF3A64B81DBE58D500E8AC53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "SwiftSwizzing(RunTime)UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "yeyanyyang.SwiftSwizzing-RunTime-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "SwiftSwizzing(RunTime)";
+			};
+			name = Debug;
+		};
+		EF3A64B91DBE58D500E8AC53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "SwiftSwizzing(RunTime)UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "yeyanyyang.SwiftSwizzing-RunTime-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "SwiftSwizzing(RunTime)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EF3A64841DBE58D500E8AC53 /* Build configuration list for PBXProject "SwiftSwizzing(RunTime)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF3A64AF1DBE58D500E8AC53 /* Debug */,
+				EF3A64B01DBE58D500E8AC53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF3A64B11DBE58D500E8AC53 /* Build configuration list for PBXNativeTarget "SwiftSwizzing(RunTime)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF3A64B21DBE58D500E8AC53 /* Debug */,
+				EF3A64B31DBE58D500E8AC53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EF3A64B41DBE58D500E8AC53 /* Build configuration list for PBXNativeTarget "SwiftSwizzing(RunTime)Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF3A64B51DBE58D500E8AC53 /* Debug */,
+				EF3A64B61DBE58D500E8AC53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EF3A64B71DBE58D500E8AC53 /* Build configuration list for PBXNativeTarget "SwiftSwizzing(RunTime)UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF3A64B81DBE58D500E8AC53 /* Debug */,
+				EF3A64B91DBE58D500E8AC53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EF3A64811DBE58D500E8AC53 /* Project object */;
+}
