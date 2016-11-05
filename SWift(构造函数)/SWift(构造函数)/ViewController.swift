@@ -25,6 +25,12 @@ class ViewController: UIViewController {
         //初始化用了重载的方法
         let p = Person(name:"ye")
         print(p)
+        
+        //如果不重写初始化init()，而只重载了init(name:,number)方法，默认就不能在使用Student()初始化
+        let s1 = Student(name: "老王", number: "18929")
+        print(s1)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
