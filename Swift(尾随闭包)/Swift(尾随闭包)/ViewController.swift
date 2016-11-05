@@ -29,12 +29,12 @@ class ViewController: UIViewController {
         
         })
         
-        
+        //GCD应用
         DispatchQueue.global().async { 
             
             //嵌套GCD异步时内部的嵌套的xcode不会自动转换为尾随闭包
             DispatchQueue.main.async(execute: { 
-                
+         
             })
             
             DispatchQueue.main.async{
