@@ -12,6 +12,7 @@ class Student: Person {
 
     var  number : String
     
+    //重写
     override init() {
         
         number = "001"
@@ -20,6 +21,14 @@ class Student: Person {
     
     }
     
+    //重载
+    init(name: String, number:String) {
+        
+        self.number = number
+    
+        //调用父类的给name初始化
+        super.init(name: name)
+    }
     
     
     
