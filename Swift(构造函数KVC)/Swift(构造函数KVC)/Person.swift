@@ -27,8 +27,8 @@ class Person: NSObject {
     //原因： Int 是一个基本数据类型结构体，OC中没有，OC中只有基本数据类型
 //    var  age :Int?
     
-    private var title: String?
-    
+//    private var title: String?
+    var title: String?
     
     //重载
     init(dict: [String: AnyObject]) {
@@ -43,6 +43,10 @@ class Person: NSObject {
         
     }
     
+    //字典比属性多的时候，重写undefinedKey,不然会崩溃
+    override func setValue(_ value: Any?, forUndefinedKey key: String) {
+        //没有调用super，将父类的代码覆盖，就不会崩溃！
+    }
     
     
 }
