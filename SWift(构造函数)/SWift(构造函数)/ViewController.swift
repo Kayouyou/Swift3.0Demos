@@ -19,8 +19,12 @@ class ViewController: UIViewController {
         let person = Person()
         print(person.name)
         
+        let s = Student()
+        print(s.number)
         
-        
+        //初始化用了重载的方法
+        let p = Person(name:"ye")
+        print(p)
     }
 
     override func didReceiveMemoryWarning() {

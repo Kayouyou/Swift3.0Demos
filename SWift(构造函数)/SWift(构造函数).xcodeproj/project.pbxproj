@@ -13,6 +13,7 @@
 		EF5946051DCE07AC00A1C145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF5946041DCE07AC00A1C145 /* Assets.xcassets */; };
 		EF5946081DCE07AC00A1C145 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF5946061DCE07AC00A1C145 /* LaunchScreen.storyboard */; };
 		EF5946101DCE07CB00A1C145 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59460F1DCE07CB00A1C145 /* Person.swift */; };
+		EF5946121DCE0CE300A1C145 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5946111DCE0CE300A1C145 /* Student.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		EF5946071DCE07AC00A1C145 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF5946091DCE07AC00A1C145 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF59460F1DCE07CB00A1C145 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		EF5946111DCE0CE300A1C145 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				EF5945FD1DCE07AC00A1C145 /* AppDelegate.swift */,
 				EF5945FF1DCE07AC00A1C145 /* ViewController.swift */,
 				EF59460F1DCE07CB00A1C145 /* Person.swift */,
+				EF5946111DCE0CE300A1C145 /* Student.swift */,
 				EF5946011DCE07AC00A1C145 /* Main.storyboard */,
 				EF5946041DCE07AC00A1C145 /* Assets.xcassets */,
 				EF5946061DCE07AC00A1C145 /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 				EF5946101DCE07CB00A1C145 /* Person.swift in Sources */,
 				EF5946001DCE07AC00A1C145 /* ViewController.swift in Sources */,
 				EF5945FE1DCE07AC00A1C145 /* AppDelegate.swift in Sources */,
+				EF5946121DCE0CE300A1C145 /* Student.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
