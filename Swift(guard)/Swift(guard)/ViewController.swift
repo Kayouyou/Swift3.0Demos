@@ -25,7 +25,7 @@ class ViewController: UIViewController {
             return
         }
         //url的构造方法可以返回nil
-        let url = URL(string: "http://www.baidu.com")
+       let url = URL(string: "http://www.baidu.com")
         //跟OC不同的还是闭包的参数需要自己写，OC是直接带出 
         //如果不关心的值，可以直接下划线忽略_
        URLSession.shared.dataTask(with: url!) { (data, _, error) in
@@ -48,7 +48,10 @@ class ViewController: UIViewController {
         print(html ?? "没有数据")
         
         }.resume()
-    
+        
+        let p = Person(name: "老王", age: 100)
+        print(p?.name ?? "name 为空")
+        
     }
 
     

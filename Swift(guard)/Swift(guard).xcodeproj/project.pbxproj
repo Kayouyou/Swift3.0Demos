@@ -12,6 +12,7 @@
 		EF5946671DCF27A800A1C145 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF5946651DCF27A800A1C145 /* Main.storyboard */; };
 		EF5946691DCF27A800A1C145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF5946681DCF27A800A1C145 /* Assets.xcassets */; };
 		EF59466C1DCF27A800A1C145 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF59466A1DCF27A800A1C145 /* LaunchScreen.storyboard */; };
+		EF5946741DCF317600A1C145 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5946731DCF317600A1C145 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		EF5946681DCF27A800A1C145 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF59466B1DCF27A800A1C145 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF59466D1DCF27A800A1C145 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF5946731DCF317600A1C145 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				EF5946611DCF27A800A1C145 /* AppDelegate.swift */,
 				EF5946631DCF27A800A1C145 /* ViewController.swift */,
+				EF5946731DCF317600A1C145 /* Person.swift */,
 				EF5946651DCF27A800A1C145 /* Main.storyboard */,
 				EF5946681DCF27A800A1C145 /* Assets.xcassets */,
 				EF59466A1DCF27A800A1C145 /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF5946741DCF317600A1C145 /* Person.swift in Sources */,
 				EF5946641DCF27A800A1C145 /* ViewController.swift in Sources */,
 				EF5946621DCF27A800A1C145 /* AppDelegate.swift in Sources */,
 			);
