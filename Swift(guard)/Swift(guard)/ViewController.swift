@@ -18,8 +18,24 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //通过便利构造函数简化控件创建
+        
+        
+        /// text1 和 text2都是正确的创建方法，因为fontsize有默认值所以可以省略
+        let text1 = UITextField(frame: CGRect(x:0,y:0,width:100,height:100), placeHolder: "默认值")
+        view.addSubview(text1)
+        
+        let text2 = UITextField(frame: CGRect(x:0,y:100,width:100,height:100), placeHolder: "正常", fontSize: 15)
+        view.addSubview(text2)
+        
+        let btn = UIButton(title: "测试", color: .blue)
+        btn.frame = CGRect(x: 100, y: 100, width: 50, height: 50)
+        btn.center = self.view.center
+        view.addSubview(btn)
+        
         age = 6
-        guard age == 0 else {
+        guard age != 0 else {
             
             print(age!)
             return
@@ -51,6 +67,8 @@ class ViewController: UIViewController {
         
         let p = Person(name: "老王", age: 100)
         print(p?.name ?? "name 为空")
+        
+        
         
     }
 

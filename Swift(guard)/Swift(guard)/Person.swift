@@ -39,7 +39,13 @@ class Person: NSObject {
         self.name = name
     }
     
-    
+    override init(){
+        super.init()
+        
+        
+//        self.init
+        
+    }
     
     
     
