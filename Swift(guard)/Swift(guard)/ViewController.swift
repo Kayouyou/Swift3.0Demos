@@ -72,7 +72,16 @@ class ViewController: UIViewController {
         
     }
 
-    
+    //它实际是析构函数
+    deinit {
+        
+        //没有func说明不能被人为的调用
+        
+        //1,跟踪对象释放
+        //2,必须释放的 (通知，不释放会泄露，KVO不释放会崩溃 NSTimer不释放会循环引用)
+        
+        
+    }
 
 
 

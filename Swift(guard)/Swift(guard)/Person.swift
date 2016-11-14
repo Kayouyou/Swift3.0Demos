@@ -46,9 +46,5 @@ class Person: NSObject {
 //        self.init
         
     }
-    
-    
-    
-    
-    
+
 }
