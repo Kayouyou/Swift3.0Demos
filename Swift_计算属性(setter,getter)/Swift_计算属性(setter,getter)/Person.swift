@@ -39,10 +39,21 @@ class Person: NSObject {
     
     //只读属性简写  直接return
     
+    /// 又称为 计算性属性  它本身不保存内容，只通过计算来获取内容
     var title2: String{
         
         return "Mr xxx" + (name ?? "")
     }
+    
+    //懒加载完整写法 闭包
+    //懒加载会在第一次访问的时候执行，闭包执行结束后，会吧结果保存在title3中
+    //懒加载属性会存储内存空间，计算属性不会，只要调用过一次，后面的闭包再也不会执行了！
+    lazy var title3:String = { [weak self] in
+        
+        return "lazy" + (self!.name ?? "")
+    }()
+    
+    
     
     
 }
