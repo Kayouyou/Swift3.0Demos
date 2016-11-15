@@ -42,12 +42,34 @@ class ViewController: UIViewController {
     }()
     
     
-    
-    
+    //声明一个私有的懒加载属性label
+    private lazy var MyLabel:UILabel? = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+       
+        print(MyLabel)
+        
+        MyLabel?.text = "hello"
+        MyLabel?.sizeToFit()
+        
+        
+        print(MyLabel)
+        
+        //label释放
+        MyLabel = nil
+        
+        //注意：和OC不同
+        /**
+        一旦label被设置为nil，懒加载也不会再次执行！
+        懒加载代码只会在第一次调用时执行闭包，然后将闭包的结果保存在label的属性中
+         
+         Swift中，一定注意不要主动清理视图或控件，因为懒加载不会再次创建
+        */
+        
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
