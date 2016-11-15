@@ -8,13 +8,22 @@
 
 import UIKit
 
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // window是可选的
     var window: UIWindow?
 
-
+    /**
+     1,Swift中 有命名空间
+     - 在同一个命名空间下，全局共享
+     - 第三方使用，swfit如果直接使用从属于统一命名空间，有可能冲突
+     2，重点知道： swift中 NSSClassFromString
+     - 反射最重要的目的就是解构，多人开发时会经常使用
+     - 
+    */
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
        
         // 代码中的 ？  都是可选解包 ，发送消息，本身不参与计算，所有的？xcode自动添加
@@ -22,8 +31,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.backgroundColor = UIColor.white
         
-        //2,设置根控制器
-        let vc = ViewController()
+        //2,设置根控制器，需要添加命名空间 ->默认就是项目名称（最好不要有数字和特殊符号）
+//        let vc = ViewController()
+        
+        let clsName = "Swift_反射机制.ViewController"
+        //AnyClass？ -》视图控制器类型
+        let cls = NSClassFromString(clsName) as? UIViewController.Type
+        let vc = cls?.init()
+    
         window?.rootViewController = vc
         //3,window 可见
         window?.makeKeyAndVisible()
