@@ -27,9 +27,22 @@ class Person: NSObject {
         
     }
     
+    //OC中  定义属性的时候  有一个readonly-》getter
+    var title:String{
+        
+        //之重写了getter方法，没有重写setter方法，就是只读属性
+        get{
+            
+            return "Mr" + (name ?? "")
+        }
+    }
     
+    //只读属性简写  直接return
     
-    
+    var title2: String{
+        
+        return "Mr xxx" + (name ?? "")
+    }
     
     
 }

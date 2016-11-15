@@ -19,6 +19,11 @@ class ViewController: UIViewController {
         
         p.name = "老王"
         print(p.name)
+        print(p.title)
+        
+        //会报错，只读属性
+         //p.title = "叶"
+        
         
         
         
