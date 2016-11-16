@@ -34,11 +34,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //2,设置根控制器，需要添加命名空间 ->默认就是项目名称（最好不要有数字和特殊符号）
 //        let vc = ViewController()
         
-        let clsName = "Swift_反射机制.ViewController"
-        //AnyClass？ -》视图控制器类型
-        let cls = NSClassFromString(clsName) as? UIViewController.Type
-        let vc = cls?.init()
+//        let clsName = "Swift_反射机制.ViewController"
+//        //AnyClass？ -》视图控制器类型
+//        let cls = NSClassFromString(clsName) as? UIViewController.Type
+//        let vc = cls?.init()
     
+        //输出bundle info.plist 内容,通过info.plist加载命名空间,buildSetting -> ProductName -》改项目名
+        print(Bundle.main.infoDictionary ?? "")
+        let ns = Bundle.main.infoDictionary?["CFBundleName"] as? String ?? ""
+        let clsName2 = ns + "." + "ViewController"
+        let cls = NSClassFromString(clsName2) as? UIViewController.Type
+        let vc = cls?.init()
+
+        
+        
+        
         window?.rootViewController = vc
         //3,window 可见
         window?.makeKeyAndVisible()
