@@ -21,7 +21,6 @@ extension Bundle{
     
     //2，计算属性，类似于函数，没有参数 有 返回值
     var nameSpace : String{
-        
         return infoDictionary?["CFBundleName"] as? String ?? ""
     }
 }

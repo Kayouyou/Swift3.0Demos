@@ -33,7 +33,7 @@ extension WBMainViewController{
     func setUpChildControllers() {
         
         let array = [
-        ["clsName":"WBHomeViewController","title":"首页","imageName":""]
+        ["clsName":"WBHomeViewController","title":"首页","imageName":"homeImage"]
         ]
         
         var arrayM = [UIViewController]()
@@ -54,9 +54,10 @@ extension WBMainViewController{
       
         //1,取得字段内容,守护内容
         guard let clsName = dict["clsName"],
-              let title = dict["title"],
-              let imageName = dict["imageName"],
-              let cls = NSClassFromString(Bundle.main.nameSpace + "." + clsName) as? UIViewController.Type else{
+               let title = dict["title"],
+               let imageName = dict["imageName"],
+               let cls = NSClassFromString(Bundle.main.nameSpace + "." + clsName) as? UIViewController.Type else{
+                
                 
                 return UIViewController()
         }

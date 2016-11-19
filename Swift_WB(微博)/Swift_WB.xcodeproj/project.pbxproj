@@ -24,7 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EF371FFA1DE0277D00AB5B86 /* Swift_WB(微博).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift_WB(微博).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF371FFA1DE0277D00AB5B86 /* Swift_WB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift_WB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF371FFD1DE0277D00AB5B86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF3720041DE0277D00AB5B86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF3720071DE0277D00AB5B86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 		EF371FF11DE0277D00AB5B86 = {
 			isa = PBXGroup;
 			children = (
-				EF371FFC1DE0277D00AB5B86 /* Swift_WB(微博) */,
+				EF371FFC1DE0277D00AB5B86 /* Swift_WB */,
 				EF371FFB1DE0277D00AB5B86 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,12 +69,12 @@
 		EF371FFB1DE0277D00AB5B86 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EF371FFA1DE0277D00AB5B86 /* Swift_WB(微博).app */,
+				EF371FFA1DE0277D00AB5B86 /* Swift_WB.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EF371FFC1DE0277D00AB5B86 /* Swift_WB(微博) */ = {
+		EF371FFC1DE0277D00AB5B86 /* Swift_WB */ = {
 			isa = PBXGroup;
 			children = (
 				EF37200F1DE0279A00AB5B86 /* Classes */,
@@ -84,6 +84,7 @@
 				EF3720061DE0277D00AB5B86 /* LaunchScreen.storyboard */,
 				EF3720091DE0277D00AB5B86 /* Info.plist */,
 			);
+			name = Swift_WB;
 			path = "Swift_WB(微博)";
 			sourceTree = "<group>";
 		};
@@ -192,9 +193,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EF371FF91DE0277D00AB5B86 /* Swift_WB(微博) */ = {
+		EF371FF91DE0277D00AB5B86 /* Swift_WB */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EF37200C1DE0277D00AB5B86 /* Build configuration list for PBXNativeTarget "Swift_WB(微博)" */;
+			buildConfigurationList = EF37200C1DE0277D00AB5B86 /* Build configuration list for PBXNativeTarget "Swift_WB" */;
 			buildPhases = (
 				EF371FF61DE0277D00AB5B86 /* Sources */,
 				EF371FF71DE0277D00AB5B86 /* Frameworks */,
@@ -204,9 +205,9 @@
 			);
 			dependencies = (
 			);
-			name = "Swift_WB(微博)";
+			name = Swift_WB;
 			productName = "Swift_WB(微博)";
-			productReference = EF371FFA1DE0277D00AB5B86 /* Swift_WB(微博).app */;
+			productReference = EF371FFA1DE0277D00AB5B86 /* Swift_WB.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -228,7 +229,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EF371FF51DE0277D00AB5B86 /* Build configuration list for PBXProject "Swift_WB(微博)" */;
+			buildConfigurationList = EF371FF51DE0277D00AB5B86 /* Build configuration list for PBXProject "Swift_WB" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -241,7 +242,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EF371FF91DE0277D00AB5B86 /* Swift_WB(微博) */,
+				EF371FF91DE0277D00AB5B86 /* Swift_WB */,
 			);
 		};
 /* End PBXProject section */
@@ -419,7 +420,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EF371FF51DE0277D00AB5B86 /* Build configuration list for PBXProject "Swift_WB(微博)" */ = {
+		EF371FF51DE0277D00AB5B86 /* Build configuration list for PBXProject "Swift_WB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EF37200A1DE0277D00AB5B86 /* Debug */,
@@ -428,13 +429,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EF37200C1DE0277D00AB5B86 /* Build configuration list for PBXNativeTarget "Swift_WB(微博)" */ = {
+		EF37200C1DE0277D00AB5B86 /* Build configuration list for PBXNativeTarget "Swift_WB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EF37200D1DE0277D00AB5B86 /* Debug */,
 				EF37200E1DE0277D00AB5B86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
