@@ -20,6 +20,7 @@
 		EF3720481DE02A2300AB5B86 /* NSString+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = EF37203E1DE02A2300AB5B86 /* NSString+JSON.m */; };
 		EF37204A1DE02A2300AB5B86 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3720421DE02A2300AB5B86 /* UIBarButtonItem+Extension.m */; };
 		EF37204C1DE02A2300AB5B86 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3720461DE02A2300AB5B86 /* UIView+Extension.m */; };
+		EF3720521DE032A200AB5B86 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3720511DE032A200AB5B86 /* BundleExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		EF3720461DE02A2300AB5B86 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		EF37204F1DE02CD300AB5B86 /* Swift-Briding-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift-Briding-Header.h"; sourceTree = "<group>"; };
 		EF3720501DE02D1100AB5B86 /* ToolHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolHeader.h; sourceTree = "<group>"; };
+		EF3720511DE032A200AB5B86 /* BundleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 		EF3720111DE0279A00AB5B86 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				EF3720511DE032A200AB5B86 /* BundleExtension.swift */,
 				EF37203A1DE02A2300AB5B86 /* Category */,
 			);
 			path = Tool;
@@ -271,6 +274,7 @@
 				EF37204C1DE02A2300AB5B86 /* UIView+Extension.m in Sources */,
 				EF3720211DE0279A00AB5B86 /* WBHomeViewController.swift in Sources */,
 				EF3720231DE0279A00AB5B86 /* WBMainViewController.swift in Sources */,
+				EF3720521DE032A200AB5B86 /* BundleExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
