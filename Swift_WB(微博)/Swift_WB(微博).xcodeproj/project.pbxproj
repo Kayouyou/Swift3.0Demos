@@ -17,6 +17,9 @@
 		EF3720241DE0279A00AB5B86 /* WBNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37201A1DE0279A00AB5B86 /* WBNavigationController.swift */; };
 		EF3720251DE0279A00AB5B86 /* WBMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37201C1DE0279A00AB5B86 /* WBMessageViewController.swift */; };
 		EF3720261DE0279A00AB5B86 /* WBProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37201E1DE0279A00AB5B86 /* WBProfileViewController.swift */; };
+		EF3720481DE02A2300AB5B86 /* NSString+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = EF37203E1DE02A2300AB5B86 /* NSString+JSON.m */; };
+		EF37204A1DE02A2300AB5B86 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3720421DE02A2300AB5B86 /* UIBarButtonItem+Extension.m */; };
+		EF37204C1DE02A2300AB5B86 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3720461DE02A2300AB5B86 /* UIView+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,14 @@
 		EF37201A1DE0279A00AB5B86 /* WBNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNavigationController.swift; sourceTree = "<group>"; };
 		EF37201C1DE0279A00AB5B86 /* WBMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMessageViewController.swift; sourceTree = "<group>"; };
 		EF37201E1DE0279A00AB5B86 /* WBProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBProfileViewController.swift; sourceTree = "<group>"; };
+		EF37203D1DE02A2300AB5B86 /* NSString+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JSON.h"; sourceTree = "<group>"; };
+		EF37203E1DE02A2300AB5B86 /* NSString+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JSON.m"; sourceTree = "<group>"; };
+		EF3720411DE02A2300AB5B86 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
+		EF3720421DE02A2300AB5B86 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		EF3720451DE02A2300AB5B86 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		EF3720461DE02A2300AB5B86 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		EF37204F1DE02CD300AB5B86 /* Swift-Briding-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift-Briding-Header.h"; sourceTree = "<group>"; };
+		EF3720501DE02D1100AB5B86 /* ToolHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolHeader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +77,7 @@
 			children = (
 				EF37200F1DE0279A00AB5B86 /* Classes */,
 				EF371FFD1DE0277D00AB5B86 /* AppDelegate.swift */,
+				EF37204F1DE02CD300AB5B86 /* Swift-Briding-Header.h */,
 				EF3720041DE0277D00AB5B86 /* Assets.xcassets */,
 				EF3720061DE0277D00AB5B86 /* LaunchScreen.storyboard */,
 				EF3720091DE0277D00AB5B86 /* Info.plist */,
@@ -94,6 +106,7 @@
 		EF3720111DE0279A00AB5B86 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				EF37203A1DE02A2300AB5B86 /* Category */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -129,9 +142,9 @@
 		EF3720171DE0279A00AB5B86 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				EF3720181DE0279A00AB5B86 /* WBBaseViewController.swift */,
-				EF3720191DE0279A00AB5B86 /* WBMainViewController.swift */,
 				EF37201A1DE0279A00AB5B86 /* WBNavigationController.swift */,
+				EF3720191DE0279A00AB5B86 /* WBMainViewController.swift */,
+				EF3720181DE0279A00AB5B86 /* WBBaseViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -157,6 +170,20 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EF37203A1DE02A2300AB5B86 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				EF37203D1DE02A2300AB5B86 /* NSString+JSON.h */,
+				EF37203E1DE02A2300AB5B86 /* NSString+JSON.m */,
+				EF3720411DE02A2300AB5B86 /* UIBarButtonItem+Extension.h */,
+				EF3720421DE02A2300AB5B86 /* UIBarButtonItem+Extension.m */,
+				EF3720451DE02A2300AB5B86 /* UIView+Extension.h */,
+				EF3720461DE02A2300AB5B86 /* UIView+Extension.m */,
+				EF3720501DE02D1100AB5B86 /* ToolHeader.h */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +220,7 @@
 					EF371FF91DE0277D00AB5B86 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = WDD7BKQBDJ;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -232,12 +260,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF37204A1DE02A2300AB5B86 /* UIBarButtonItem+Extension.m in Sources */,
 				EF3720221DE0279A00AB5B86 /* WBBaseViewController.swift in Sources */,
 				EF3720261DE0279A00AB5B86 /* WBProfileViewController.swift in Sources */,
 				EF3720251DE0279A00AB5B86 /* WBMessageViewController.swift in Sources */,
 				EF3720201DE0279A00AB5B86 /* WBDiscoverViewController.swift in Sources */,
 				EF3720241DE0279A00AB5B86 /* WBNavigationController.swift in Sources */,
+				EF3720481DE02A2300AB5B86 /* NSString+JSON.m in Sources */,
 				EF371FFE1DE0277D00AB5B86 /* AppDelegate.swift in Sources */,
+				EF37204C1DE02A2300AB5B86 /* UIView+Extension.m in Sources */,
 				EF3720211DE0279A00AB5B86 /* WBHomeViewController.swift in Sources */,
 				EF3720231DE0279A00AB5B86 /* WBMainViewController.swift in Sources */,
 			);
@@ -354,11 +385,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = WDD7BKQBDJ;
 				INFOPLIST_FILE = "Swift_WB(微博)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "yeyanyyang.Swift-WB----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Swift_WB(微博)/Swift-Briding-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -367,11 +401,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = WDD7BKQBDJ;
 				INFOPLIST_FILE = "Swift_WB(微博)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "yeyanyyang.Swift-WB----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Swift_WB(微博)/Swift-Briding-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
