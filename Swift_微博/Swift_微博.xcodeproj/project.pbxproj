@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		EF371FC61DE01F5C00AB5B86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF371FC51DE01F5C00AB5B86 /* AppDelegate.swift */; };
 		EF371FCD1DE01F5C00AB5B86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF371FCC1DE01F5C00AB5B86 /* Assets.xcassets */; };
-		EF371FD01DE01F5C00AB5B86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF371FCE1DE01F5C00AB5B86 /* LaunchScreen.storyboard */; };
 		EF371FE21DE0233A00AB5B86 /* WBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF371FE11DE0233A00AB5B86 /* WBMainViewController.swift */; };
 		EF371FE41DE0237100AB5B86 /* WBNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF371FE31DE0237100AB5B86 /* WBNavigationController.swift */; };
 		EF371FE61DE023AB00AB5B86 /* WBBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF371FE51DE023AB00AB5B86 /* WBBaseViewController.swift */; };
@@ -23,7 +22,6 @@
 		EF371FC21DE01F5C00AB5B86 /* Swift_微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift_微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF371FC51DE01F5C00AB5B86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF371FCC1DE01F5C00AB5B86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EF371FCF1DE01F5C00AB5B86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF371FD11DE01F5C00AB5B86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF371FE11DE0233A00AB5B86 /* WBMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMainViewController.swift; sourceTree = "<group>"; };
 		EF371FE31DE0237100AB5B86 /* WBNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNavigationController.swift; sourceTree = "<group>"; };
@@ -67,7 +65,6 @@
 				EF371FD71DE022A200AB5B86 /* Classes */,
 				EF371FC51DE01F5C00AB5B86 /* AppDelegate.swift */,
 				EF371FCC1DE01F5C00AB5B86 /* Assets.xcassets */,
-				EF371FCE1DE01F5C00AB5B86 /* LaunchScreen.storyboard */,
 				EF371FD11DE01F5C00AB5B86 /* Info.plist */,
 			);
 			path = "Swift_微博";
@@ -220,7 +217,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF371FD01DE01F5C00AB5B86 /* LaunchScreen.storyboard in Resources */,
 				EF371FCD1DE01F5C00AB5B86 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,17 +240,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		EF371FCE1DE01F5C00AB5B86 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EF371FCF1DE01F5C00AB5B86 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		EF371FD21DE01F5C00AB5B86 /* Debug */ = {
@@ -353,6 +338,8 @@
 		EF371FD51DE01F5C00AB5B86 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = WDD7BKQBDJ;
 				INFOPLIST_FILE = "Swift_微博/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -366,6 +353,8 @@
 		EF371FD61DE01F5C00AB5B86 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = WDD7BKQBDJ;
 				INFOPLIST_FILE = "Swift_微博/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
