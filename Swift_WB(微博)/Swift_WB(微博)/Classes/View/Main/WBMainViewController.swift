@@ -14,11 +14,26 @@ class WBMainViewController: UITabBarController {
     // MARK - 私有控件
     lazy var composeButton : UIButton = UIButton()
 
+    //Swift 3.0跟之前API变化了
+    private var _orientations = UIInterfaceOrientationMask.portrait
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         setUpChildControllers()
         setUpComposeButton()
+    }
+    
+   
+    /**
+     1,使用代码控制设备方向，好处是可以在需要的时候单独处理
+     2,设置支持方向之后，当前的控制器及子控制器都会遵守这个方向
+     3,如果播放器，通常是通过modal 展现的
+ 
+    */
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        get { return self._orientations }
+        set { self._orientations = newValue }
     }
     
     // MARK - 监听方法
