@@ -27,7 +27,7 @@ class WBMainViewController: UITabBarController {
    
     /**
      1,使用代码控制设备方向，好处是可以在需要的时候单独处理
-     2,设置支持方向之后，当前的控制器及子控制器都会遵守这个方向
+     2,设置支持方向之后，当前的控制器及子控制器都会遵守这个方向(push)
      3,如果播放器，通常是通过modal 展现的
  
     */
@@ -51,6 +51,13 @@ class WBMainViewController: UITabBarController {
         
         print("plus被点击");
         
+        // 测试方向的旋转
+        let  vc = UIViewController()
+        vc.view.backgroundColor = UIColor.green
+        let navi = UINavigationController(rootViewController: vc)
+        
+        present(navi, animated: true, completion: nil)
+    
     }
     
 
