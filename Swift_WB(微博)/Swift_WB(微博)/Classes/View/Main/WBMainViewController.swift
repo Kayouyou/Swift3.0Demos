@@ -65,8 +65,17 @@ extension WBMainViewController{
         //2,创建视图控制器
         let vc = cls.init()
         vc.title = title
-        vc.tabBarItem.image = UIImage(named: "")
-        vc.tabBarItem.selectedImage = UIImage(named:"")?.withRenderingMode(.alwaysOriginal)
+        
+        //3,设置图像
+//        vc.tabBarItem.image = UIImage(named: "")
+//        vc.tabBarItem.selectedImage = UIImage(named:"")?.withRenderingMode(.alwaysOriginal)
+        
+        //4,设置tabbar标题 字体
+        vc.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.orange], for: .highlighted)
+        
+        //系统默认12号字体 normal字体大小
+        vc.tabBarItem.setTitleTextAttributes([NSFontAttributeName:UIFont.systemFont(ofSize: 24)], for: .normal)
+        
         let nav = WBNavigationController(rootViewController: vc)
         return nav//多态
     }
