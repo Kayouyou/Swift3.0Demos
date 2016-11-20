@@ -47,7 +47,7 @@ class WBNavigationController: UINavigationController {
             }
             
             //取出自定义的navItem
-            vc.naviItem.leftBarButtonItem = UIBarButtonItem(title: title, target: self, action: #selector(back))
+            vc.naviItem.leftBarButtonItem = UIBarButtonItem(title: title, target: self, action: #selector(back), isBack:true)
         }
         
         super.pushViewController(viewController, animated: true)

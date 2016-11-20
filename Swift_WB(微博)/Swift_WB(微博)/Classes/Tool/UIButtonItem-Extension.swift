@@ -13,9 +13,21 @@ extension UIBarButtonItem{
     
     //创建 uibarbuttonitem
     //便利构造函数
-    convenience init(title: String, fontSize: CGFloat = 16, target: AnyObject? ,action: Selector) {
+    convenience init(title: String, fontSize: CGFloat = 16, target: AnyObject? ,action: Selector , isBack: Bool = false) {
        
         let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 45, height: 45))
+        if isBack {
+            
+            let imageName = ""
+            btn.setImage(UIImage(named:imageName), for: .normal)
+            
+            //这一句加上是为了显示完整button的标题
+            btn.sizeToFit()
+        }
+        
+        
+        
+       
         btn.setTitle(title, for: .normal)
         btn.setTitleColor(UIColor.darkGray, for: .normal)
         btn.setTitleColor(UIColor.orange, for: .highlighted)
