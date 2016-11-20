@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF1BEDE61DE1865B009F8496 /* UIButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1BEDE51DE1865B009F8496 /* UIButtonItem-Extension.swift */; };
 		EF371FFE1DE0277D00AB5B86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF371FFD1DE0277D00AB5B86 /* AppDelegate.swift */; };
 		EF3720051DE0277D00AB5B86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF3720041DE0277D00AB5B86 /* Assets.xcassets */; };
 		EF3720081DE0277D00AB5B86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF3720061DE0277D00AB5B86 /* LaunchScreen.storyboard */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EF1BEDE51DE1865B009F8496 /* UIButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButtonItem-Extension.swift"; sourceTree = "<group>"; };
 		EF371FFA1DE0277D00AB5B86 /* Swift_WB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift_WB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF371FFD1DE0277D00AB5B86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF3720041DE0277D00AB5B86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				EF3720511DE032A200AB5B86 /* BundleExtension.swift */,
+				EF1BEDE51DE1865B009F8496 /* UIButtonItem-Extension.swift */,
 				EF37203A1DE02A2300AB5B86 /* Category */,
 			);
 			path = Tool;
@@ -267,6 +270,7 @@
 				EF37204A1DE02A2300AB5B86 /* UIBarButtonItem+Extension.m in Sources */,
 				EF3720221DE0279A00AB5B86 /* WBBaseViewController.swift in Sources */,
 				EF3720261DE0279A00AB5B86 /* WBProfileViewController.swift in Sources */,
+				EF1BEDE61DE1865B009F8496 /* UIButtonItem-Extension.swift in Sources */,
 				EF3720251DE0279A00AB5B86 /* WBMessageViewController.swift in Sources */,
 				EF3720201DE0279A00AB5B86 /* WBDiscoverViewController.swift in Sources */,
 				EF3720241DE0279A00AB5B86 /* WBNavigationController.swift in Sources */,
