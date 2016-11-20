@@ -9,8 +9,14 @@
 import UIKit
 
 
-/// 基类
-class WBBaseViewController: UIViewController {
+/// 基类,OC不支持多继承，如果不支持如何替代，使用协议替代！
+/// swift的写法更类似与多继承
+/// swift中利用extension可以吧函数按照功能分类管理，便于阅读和维护
+/**
+ 1，extension中不能有属性
+ 2，extension中不能重写父类方法，重写父类方法是子类的职责
+ */
+class WBBaseViewController: UIViewController{
 
     //表格视图，如果用户没有登录就不创建
     var tabelView: UITableView?
@@ -55,6 +61,10 @@ extension WBBaseViewController {
         //view.addSubview(tabelView!)
         //添加到bar下面
         view.insertSubview(tabelView!, belowSubview: navigationBar)
+        
+        //设置数据源和代理
+        tabelView?.delegate = self
+        tabelView?.dataSource = self
     }
     
     //设置导航条
@@ -70,7 +80,25 @@ extension WBBaseViewController {
         //设置navBar的字体颜色
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.darkGray]
     }
+
+}
+
+// MARK - tableView 的代理和数据源方法
+extension WBBaseViewController :UITableViewDelegate,UITableViewDataSource{
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 0
+    }
+    
+    //基类只是准备方法，子类负责具体实现
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //只是保证没有语法错误
+        return UITableViewCell()
+    }
     
     
 }
+
+
+
