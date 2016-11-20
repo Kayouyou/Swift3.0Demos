@@ -15,9 +15,20 @@ class WBBaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setUpUI()
+    }
+}
+
+// MARK - 设置界面
+extension WBBaseViewController {
+    
+    func setUpUI(){
         
-        
-        
+        view.backgroundColor = UIColor.white
         
     }
+    
+    
+    
+    
 }
