@@ -38,8 +38,16 @@ class WBNavigationController: UINavigationController {
         //判断控制器的类型
         if let vc = viewController as? WBBaseViewController  {
             
+            var title = "返回"
+            
+            //判断控制器的级数,只有一个子控制器的时候，显示栈底控制器的标题
+            if childViewControllers.count == 1 {
+                
+                title = childViewControllers.first?.title ?? "返回"
+            }
+            
             //取出自定义的navItem
-            vc.naviItem.leftBarButtonItem = UIBarButtonItem(title: "返回", target: self, action: #selector(back))
+            vc.naviItem.leftBarButtonItem = UIBarButtonItem(title: title, target: self, action: #selector(back))
         }
         
         super.pushViewController(viewController, animated: true)
