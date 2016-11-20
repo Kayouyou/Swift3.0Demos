@@ -40,7 +40,8 @@ extension WBBaseViewController {
         view.addSubview(navigationBar)
         //将ite设置给bar
         navigationBar.items = [naviItem]
-        
+        //设置bar的渲染颜色
+        //navigationBar.barTintColor =
     }
     
     

@@ -47,7 +47,7 @@ extension WBHomeViewController {
 //        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: btn)
         
         //3,利用extension 创建item,简化代码
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))
+        naviItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))
 
     }
     

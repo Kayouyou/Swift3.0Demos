@@ -12,26 +12,44 @@ import UIKit
 /// 自定义导航栏
 class WBNavigationController: UINavigationController {
 
+    //为了解决默认的导航条，自定导航条，达到我们想要的效果
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        //1,隐藏默认的导航条
+        navigationBar.isHidden = true
+        
+        //2,自定义一个bar，在基类中
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    //重写 push 方法
+    //viewController 被push的控制器，设置左侧的按钮，就能够作为返回按钮
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        
+        //如果不是栈底控制器才需要隐藏，跟控制器不需要处理
+        //之所以判断是因为，所有的push动作都会走push方法，所以需要判断
+        if childViewControllers.count > 0 {
+            
+            viewController.hidesBottomBarWhenPushed = true
+        }
+        
+        //判断控制器的类型
+        if let vc = viewController as? WBBaseViewController  {
+            
+            //取出自定义的navItem
+            vc.naviItem.leftBarButtonItem = UIBarButtonItem(title: "返回", target: self, action: #selector(back))
+        }
+        
+        super.pushViewController(viewController, animated: true)
     }
-    */
-
+    
+    //pop返回到上一级控制器
+    @objc fileprivate func back(){
+        
+        popViewController(animated: true)
+    }
+    
+   
 }
