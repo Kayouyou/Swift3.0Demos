@@ -20,7 +20,8 @@ class ViewController: UIViewController {
         //注意如果构造器定义了外部参数你就必须使用它，忽略它就导致编译错误
         _ = Color(white: 0.5)
         
-        
+        //会调用class的默认构造器创建一个实例
+        _ = ShoppingList()
         
         
     }
@@ -111,7 +112,19 @@ class SurveryQuestion {
     }
 }
 
+//demo4  ===默认构造器===
+class ShoppingList {
 
+    /**
+     由于此类中所有的属性都有默认值，且它是没有父类的基类，它将自动获取一个可以为所有的属性设置为默认值的默认构造器
+     ShoopingList()形式的构造器语法
+    */
+    
+    var name:String?
+    var quantity = 1
+    var purchased = false
+    
+}
 
 
 
