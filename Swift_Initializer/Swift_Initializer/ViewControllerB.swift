@@ -99,6 +99,40 @@ class Recipelngredient: Food {
 }
 
 
+// MARK:可失败构造器
+
+/**
+ 如果一个类，结构体，枚举对象，在构造过程中可以失败，语法就是在init后加一个?
+ */
+
+struct Animals {
+    
+    let species: String
+    
+    init?(species: String){
+        
+        if species.isEmpty {
+            return nil
+        }
+        
+        self.species = species
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
