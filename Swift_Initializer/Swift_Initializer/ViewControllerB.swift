@@ -27,15 +27,32 @@ class ViewControllerB: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+// MARK: 类的构造器代理规则
+/**
+ 为了简化制定构造器和便利构造器之间的调用关系，Swfit采用以下三条规则来限制构造器之间的调用！
+ 1，指定构造器必须调用器直接父类的指定构造器。
+ 2，便利构造器必须调用同类中定义的其他构造器。
+ 3，比那里构造器必须最终导致一个指定构造器被调用。
+ 
+ 指定构造器必须向上代理
+ 便利构造器必须横向代理
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
