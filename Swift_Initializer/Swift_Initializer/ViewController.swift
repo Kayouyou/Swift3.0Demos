@@ -113,6 +113,7 @@ class SurveryQuestion {
 }
 
 //demo4  ===默认构造器===
+//如果结构体或类的所有属性都有默认值，同时没有自定义的构造器，那么Swift久会给这些结构体或类提供一个默认的构造器，这个默认的构造器就要创建一个所有的属性都设置为默认值的实例
 class ShoppingList {
 
     /**
@@ -123,8 +124,16 @@ class ShoppingList {
     var name:String?
     var quantity = 1
     var purchased = false
-    
 }
+
+//demo5 结构体的逐一成员构造器
+//如果结构体没有提供自定义的构造器，他们将会自动获得一个逐一的成员构造器，即使结构体的存储属性没有默认值
+//结构体Size自动获取一个逐一成员构造器init(width:height:)，你可以用它来为Size创建新的实例
+struct Size  {
+    var width = 0.0,height = 0.0
+}
+
+
 
 
 
