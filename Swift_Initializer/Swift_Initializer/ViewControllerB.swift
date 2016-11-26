@@ -59,11 +59,44 @@ class ViewControllerB: UIViewController {
  子类可以在初始化时修改继承来的变量属性，但是不能修改继承来的常量属性
  */
 
+//MARK:构造器的自动继承
+/**
+ 子类在默认情况下不会继承父类的构造器，但是如果满足条件，父类构造器就可以自动被继承
+ 1：如果子类没有定义任何指定构造器，它将自动继承所有父类的指定构造器
+ 2：如果子类提供了父类指定构造器的实现，- 无论是规则1继承的还是提供了自定义实现，-它将自动继承所有父类的便利构造器
+ */
 
+//实例
+class Food{
+    
+    var name : String
+    init(name:String) {//指定构造器
+        
+        self.name = name
+    }
+    
+    convenience init(){//便利构造器
+        self.init(name:"[Unnamed]")
+    }
+}
 
+//此类有三种构造器都可以用来创建新的Recipelngredient实例
 
-
-
+class Recipelngredient: Food {
+    
+    var quantity: Int
+    
+    init(name: String,quantity: Int) {//指定构造器
+        
+        self.quantity = quantity
+        super.init(name:name)
+    }
+    //由于便利构造器使用了跟Food中指定的构造器相同的参数，因此必须在前面使用override修饰符
+    override convenience init(name:String){
+        
+        self.init(name:name,quantity:1)//便利构造器只是简单的横向代理类中指定的构造器
+    }
+}
 
 
 
