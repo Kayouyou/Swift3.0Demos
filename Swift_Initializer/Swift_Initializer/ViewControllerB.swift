@@ -150,6 +150,31 @@ enum TemperatureUnitTwo: Character {
     case Kelvin = "K",Celsius = "C",Fahrenheit = "F"
 }
 
+//MARK:必要构造器
+/**
+ 在类的构造器前加required修饰符表明所有该类的子类都必须实现该构造器
+ 在子类重写父类的必要构造器时，必须在子类的构造器前也加required修饰符,但是不需要添加override修饰符
+
+ */
+
+class SomeClass {
+    
+    required init(){
+        
+    }
+}
+
+class SomeSubclass: SomeClass {
+    //不需要添加override修饰符
+    required init(){
+    
+    }
+}
+
+
+
+
+
 
 
 
