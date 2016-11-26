@@ -88,7 +88,24 @@ struct Color  {
     }
 }
 
+//demo3  === 可选属性类型 ===
 
+class SurveryQuestion {
+    
+    //如果你在定义一个类型的时候有一个允许在初始化的时候允许它为空，那就定义它为可选类型，它将在自动初始化的时候设置为nil。
+    var text: String
+    var response: String?
+    
+    init(text:String) {
+        
+        self.text = text
+    }
+    
+    func ask() {
+        
+        print(text)
+    }
+}
 
 
 
