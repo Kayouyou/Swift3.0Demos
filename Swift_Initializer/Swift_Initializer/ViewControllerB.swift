@@ -139,10 +139,16 @@ enum TemperatureUnit{
     }
 }
 
+// MARK:带原始值的枚举类型的可失败构造器
+/**
+ 带原始值的枚举类型会自带一个可失败构造器init?(rawValue:该可失败的构造器有一个名为rawValue的参数，其类型和枚举类型的原始类型一致，如果该参数的值能够和某个枚举成员的值匹配，则该构造器会构造想应得枚举类型，否则构造失败！
+ 因此上面的例子可以重写
+ */
 
-
-
-
+enum TemperatureUnitTwo: Character {
+   
+    case Kelvin = "K",Celsius = "C",Fahrenheit = "F"
+}
 
 
 
