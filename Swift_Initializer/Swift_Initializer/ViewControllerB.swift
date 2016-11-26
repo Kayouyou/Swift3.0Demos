@@ -120,8 +120,24 @@ struct Animals {
 }
 
 
-
-
+// MARK: 枚举类型可失败构造器
+enum TemperatureUnit{
+    
+    case Kelvin,Celsius,Fahrenheit
+    init?(symbol:Character) {
+        
+        switch symbol {
+        case "K":
+            self = .Kelvin
+        case "C":
+            self = .Celsius
+        case "F":
+            self = .Fahrenheit
+        default:
+            return nil
+        }
+    }
+}
 
 
 
