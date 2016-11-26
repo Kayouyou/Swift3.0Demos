@@ -133,6 +133,58 @@ struct Size  {
     var width = 0.0,height = 0.0
 }
 
+struct Point {
+    var x = 0.0, y = 0.0
+}
+
+//demo6 值类型的构造代理
+struct Rect {
+    
+    var origin = Point()
+    var size   = Size()
+    
+    //1,它在功能上跟没有自定义的构造器时获取的默认构造器是一样的，这个构造器是一个空函数，没有执行任何构造过程，调用这个构造器将会返回一个Rect实例，它的origin和size属性使用定义时的默认值
+    init(){}
+    
+    //2,它的功能跟没有自定义构造器时获取的结构体逐一构造器是一样的，这个构造器只会简单的将origin和size的参数赋值给对应的存储属性
+    init(origin: Point,size: Size) {
+        
+        self.origin = origin
+        self.size   = size
+    }
+    
+    //3,自定义构造器：它先通过center和size算出origin的坐标，然后在调用（代理）给init(origin,size)构造器来讲新的origin和size的值赋值给对应的属性
+    init(center:Point,size:Size) {
+        
+        let originX = center.x - (size.width/2)
+        let originY = center.y - (size.height/2)
+        //这个构造器可以直接将origin和size的值赋值给对应的属性，但是这里充分利用了已有的构造器会更方便，构造器的意图也更明晰
+        self.init(origin:Point(x: originX, y: originY),size:size)
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
