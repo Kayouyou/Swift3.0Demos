@@ -33,10 +33,6 @@ class ViewController: UIViewController {
         let number1 = RealmManager.queryAllItems(itemName: "CustomItem")
         print(number1)
         
-        
-        
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
