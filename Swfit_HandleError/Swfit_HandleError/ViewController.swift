@@ -18,8 +18,38 @@ class ViewController: UIViewController {
         super.viewDidLoad()
        
        let vendingMenchine = VendingMenchine()
+       vendingMenchine.coinsDeposited = 8
+        do{
+            
+            try buyFavouriteSnack(person: "Alice", VendingMenchine: vendingMenchine)
+        }catch VendingMachineError.invalidSelection{
+            print("invalid")
+        }catch VendingMachineError.outOfStock{
+            
+            print("")
+        }catch VendingMachineError.insufficientFunds(coinsNeeded: 8){
+            
+            print("钱不够");
+        }catch{
+            print("未知错误")
+        }
+        
+        
+        
 //       try! vendingMenchine.vend(itemNamed: "Chips")
     
+    }
+
+    //由于vend方法会传递出它抛出的任何错误，在你的代码中，必须要么直接处理这些错误，使用  do catch try! try? 要么继续传递这些错误传递下去
+    
+    let favouriteSnacks = ["Alice" : "Chips" ,"Bob" : "licorice"]
+    
+    func buyFavouriteSnack(person:String,VendingMenchine:VendingMenchine)
+        throws{
+            
+            let snackName = favouriteSnacks[person] ?? "Candy Bar"
+            //因为在调用vend的时候可能抛出错误，所以在其前面加上try
+            try VendingMenchine.vend(itemNamed: snackName)
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,17 +109,6 @@ class VendingMenchine {
     }
 }
 
-//由于vend方法会传递出它抛出的任何错误，在你的代码中，必须要么直接处理这些错误，使用  do catch try! try? 要么继续传递这些错误传递下去
-
-let favouriteSnacks = ["Alice" : "Chips" ,"Bob" : "licorice"]
-
-func buyFavouriteSnack(person:String,VendingMenchine:VendingMenchine)
-throws{
-    
-    let snackName = favouriteSnacks[person] ?? "Candy Bar"
-    //因为在调用vend的时候可能抛出错误，所以在其前面加上try
-    try VendingMenchine.vend(itemNamed: snackName)
-}
 
 //throwing构造器和throwing函数一样，在构造过程中调用throwing函数，并且通过传递到他的调用者来处理这些错误
 struct PurchaseSnack{
@@ -101,6 +120,21 @@ struct PurchaseSnack{
         self.name = name
     }
 }
+
+//MARK:用 do-catch处理错误
+/**
+ 可以使用od catch语句运行一段闭包代码来处理错误，如果在do的字句diamante里抛出错误就会与catch语句做匹配，从而决定哪一条子句来处理它
+ */
+
+
+
+
+
+
+
+
+
+
 
 
 
