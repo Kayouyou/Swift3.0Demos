@@ -35,9 +35,30 @@ class ViewController: UIViewController {
         }
         
         
+        //2，下面的例子是等价的含义
+        // demo1
+        _  = try? someThrowingFunction()
         
-//       try! vendingMenchine.vend(itemNamed: "Chips")
+        // demo2
+//        let y : Int?
+//        do{
+//            
+//            y = try? someThrowingFunction()
+//        }catch{
+//            y = nil
+//        }
+        
+        //3，禁用错误传递  使用try!
+        
+        //4,指定清理操作，使用defer{}
+    }
     
+    //将错误转换成可选值 使用try?表达式，一个错误被抛出之后表达式值就是nil，
+    
+    func someThrowingFunction() throws -> Int {
+        
+        //....
+        return 0
     }
 
     //由于vend方法会传递出它抛出的任何错误，在你的代码中，必须要么直接处理这些错误，使用  do catch try! try? 要么继续传递这些错误传递下去
