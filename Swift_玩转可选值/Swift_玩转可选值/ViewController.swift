@@ -115,5 +115,47 @@ func incrementOpitionalTwo(opitional:Int?)-> Int?{
     
 }
 
+//flatmap函数跟mao函数很像，但是flatmap帮组我们屏蔽了nil，也就是说在值不为nil的情况下，此函数可以将opitiobal值转为 non-opitional值
+//应用场景
+
+let x: Int? = 3
+let y: Int? = nil
+//let z: Int? = x + y
+
+//上面例子会报错，原因是可选值不能直接相加，不支持？相加，我们可以if let x = ,y = 或guard let x = ...
+//swift提供一种解决办法 flatMap
+
+//通过嵌套类型来调用flatmap
+func addOperations(opitionalX: Int?,opitionalY: Int?) -> Int? {
+    
+    return opitionalX.flatMap{ x in
+        opitionalY.flatMap{ y in
+           return x + y
+        }
+    }
+}
+
+//我们可以通过链式调用重写以上方法,从而使结构更清晰
+
+//func addOperationsTwo(opitionalX:Int?,opitionalY:Int?) -> Int? {
+//    
+//    return opitionalX.flatMap{ x in
+//        
+//        return x
+//        
+//        }.flatMap{ y in
+//            
+//            return x! + y
+//    }
+//}
+
+
+
+
+
+
+
+
+
 
 
