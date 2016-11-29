@@ -14,11 +14,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    
-    
-
-
 }
 
 /**
@@ -60,6 +55,35 @@ func ??<T>(optional:T?, defaultValue:@autoclosure () -> T) -> T {
         return defaultValue()
     }
 }
+
+
+// 4 ,可选值链
+
+struct Order {
+    
+    let orderNumber: Int
+    let person: Person?
+}
+
+struct Person {
+    let name: String
+    let address: Address?
+}
+
+struct Address {
+    let streetName : String
+    let city : String
+    let state: String?
+}
+
+//4.1 我们可以“显式解包运算符：order.person!.address!.state!  
+//但是如果任意中间数据缺失，这么做就会导致运行时错误使用可选绑定更安全 if let = { if let = { if let = { } }}
+//但是可选绑定又太麻烦，可选连就方便许多  if let myState = order.person?.address?.state{ }else{}
+//我们还可以更简单的使用 guard let ** = ** else{ return **} 它会让控制流更简单
+
+
+
+
 
 
 
