@@ -82,10 +82,38 @@ struct Address {
 //我们还可以更简单的使用 guard let ** = ** else{ return **} 它会让控制流更简单
 
 
+//5,可选映射
 
+/**
+ ？运算符允许我们选择性的访问可选值得方法或字段，然而在很多的其他例子中若可选值存在，你可能会想操作它，否则返回nil
+ */
 
+func incrementOpitional(opitional:Int?)-> Int?{
+    
+    guard let x = opitional  else {
+        return nil
+    }
+    return x + 1
+}
 
+extension Optional{
+    
+    func map<U>(transform: (Wrapped) -> U) -> U? {
+        
+        guard let x = self else {
+            return nil
+        }
+        return transform(x)
+    }
+}
 
+//使用map来重写incrementOpitional方法
+
+func incrementOpitionalTwo(opitional:Int?)-> Int?{
+    
+    return opitional.map(transform: { $0 + 1 })
+    
+}
 
 
 
