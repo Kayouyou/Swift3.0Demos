@@ -92,13 +92,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        //for循环迭代打印出所有的前缀
-//        for prefix in PrefixSequence(string: "Hello") {
-//            
-//            print(prefix)
-//        }
+        // 6.1 for循环迭代打印出所有的前缀
+        for prefix in PrefixSequence(string: "Hello") {
+            
+            print(prefix)
+        }
         
-        //我们还可以对它执行sequence提供的所有操作
+        //6.2  我们还可以对它执行sequence提供的所有操作
         //让hello按大写依次打印出来
        let result = PrefixSequence(string: "hello").map{
             $0.uppercased()
@@ -106,7 +106,88 @@ class ViewController: UIViewController {
         print(result)
         
         
+        //7,大部分的迭代器都是值语义的，如果你复制一份，迭代器的所有状态也都会被复制，这两个迭代器将会分别在自己的范围内工作，这是我们所期待的，标准库中的大部分迭代器也欧独具有值语义，不过也有例外存在
+        let seq = stride(from: 0, to: 10, by: 1)
+        var i1 = seq.makeIterator()
+        _ =  i1.next()
+        print(i1.next() ?? "")
+        _ = i1.next()
+        print(i1.next() ?? "")
+        
+        var i2 = i1
+        _ = i1.next()
+        _ = i1.next()
+        print(i1.next() ?? "")
+        _ = i2.next()
+        _ = i2.next()
+        print(i2.next() ?? "")
+        
+        //现在看一个不具有值语义的迭代器 AnyIterator 是一个对别的迭代器进行封装的迭代器，他爱可以用来讲原来的迭代器的具体了那些个抹消掉，如果你在创建公有的API的时候你想要将一个很复杂的迭代器具体的类型隐藏起来，二不暴露它的具体实现的时候，就可以使用这种迭代器，AnyIterator进行的封装的做法是将另外的迭代器包装到一个内部对象中，而这个对象是引用林习惯，
+        
+        var i3 = AnyIterator(i1)
+        var i4 = i3
+        
+        //在这种情况下呢，院原来的迭代器和复制后的迭代器并不是独立的，因为实际的迭代器不再是一个结构体，AnyIterator中用来存储原来迭代器的盒子对象是一个类实例，当我们将i3赋值给i4的时候，只有对这个盒子的引用被复制了。盒子里的存储的对象将被两个迭代器所共享，所以任何对i3或者i4的进行的调用，都会增加那个相同的迭代器的取值
+        print(i3.next())
+        print(i4.next())
+        //更多的时候我们是通过使用for循环隐士的进行创建的，你只用它来循环元素，然后将其抛弃，如果你发现你要与其他的对象共享一个迭代器的话，可以考虑将它封装到序列中，而不是直接使用它
+        
+        //8,基于函数的迭代器和序列
+        /**
+         AnyIterator还有一个初始化的方法，那就是直接接受一个next函数作为参数，与对应的AnySequence类型结合起来使用，我们可以做到不定义任何新的类型，比如我们可以通过一个返回AnyIterator的函数来定义斐波那契迭代器
+        */
+        
+        _ = fibsIterator()
+        
+        //因为AnySequence提供一个初始化方法，可以接受返回值为迭代器的函数作为输入，所以创建序列就非常的容易了
+        let fibsSequence = AnySequence(fibsIterator)
+        print(Array(fibsSequence.prefix(10)))
+        
+        
+        //9,另外一种方法是使用swift3.0中引入的sequence函数，这个函数有两个版本，首先使用sequence(first :next:)将使用第一个参数的值作为序列的首个元素，并使用next参数传入的闭包生成序列的后续元素，在下面的例子中，我们生成一个随机数的序列，其中每个元素都要比前一个小，直到到达0为止
+        let randomNumbera = sequence(first: 100, next: { (previous:UInt32) in
+            
+            let newValue = arc4random_uniform(previous)
+            
+            guard newValue > 0 else{
+                
+                return nil
+            }
+            return newValue
+        })
+        print(Array(randomNumbera))
+        
+        //另外一个版本是sequence(state:next:)因为它可以在两次next闭包被调用之间保存任意的可变状态，所以他更强大一些，我们可以用它来通过一级一个单一的方法调用来构建出斐波那契序列
+        let fibsSequence2 = sequence(state: (0,1)) { (state:inout(Int,Int)) -> Int? in
+            let upcomingNumber = state.0
+            state = (state.1,state.0 + state.1)
+            return upcomingNumber
+        }
+        print(Array(fibsSequence2.prefix(10)))
+        
+        //以上两个返回值都是值类型，在函数式编程中这被称之为展开(unfold)，sequence和reduce对应，reduce将一个序列缩减为一个单一的返回值，而sequence是将唯一的值展开形成一个序列
+        //这两个方法非常的有用，常用来代替传统的C风格的循环，特别是当下标步长不遵守线性关系的时候
+        
+        
+        
+        
+    
     }
+    
+    //8.1,这个和上面自定义的斐波那契的迭代器只有一个功能的不同，那就是自定义的结构体具有值语义，二使用AnyIterator定义的没有
+    func fibsIterator() -> AnyIterator<Int> {
+        
+        var state = (0,1)
+        return AnyIterator{
+            let upcomingNumber = state.0
+            state = (state.1,state.0 + state.1)
+            return upcomingNumber
+        }
+    }
+    
+    
+    
+    
     
 
 }
