@@ -82,7 +82,7 @@ for i in  ReverseSequence(arr){
  
  */
 
-
+//我们顺便可以获得 map faltmap filter reduce等方法，因为sequence的扩展已经实现了他们
 
 
 
