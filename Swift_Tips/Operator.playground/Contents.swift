@@ -27,8 +27,8 @@ func +*(left:Vetor2D,right:Vetor2D) -> Double{
 }
 
 // 实际使用
-v1 = Vetor2D(x:1.0,y:3.0)
-v2 = Vetor2D(x: 4.0, y: 6.0)
+let v1 = Vetor2D(x:1.0,y:3.0)
+let v2 = Vetor2D(x: 4.0, y: 6.0)
 let result = v1 +* v2
 
 
