@@ -65,6 +65,21 @@ print(people as Array)
 
 //以上的排序描述符运用了OC的两个运行时特性：1，键路径key，以及键值编程，2，其次是selector方法，实际就是一个用来描述方法名字string，在运行时，这个selector将被变为用来比较两个对象的函数，对象上指定键所对应的值将用来进行比较
 
+//怎么用swift复制以上部分的功能呢？
+
+var string = ["hello","hallo","Hallo"]
+string.sort{
+    $0.localizedCaseInsensitiveCompare($1) == .orderedAscending
+}
+// 如果只是想用一个对象的某一个属性进行排序的话，也非常的简单
+
+people.sorted {
+
+    $0.yearOfBirth < $1.yearOfBirth
+}
+
+print(people)
+
 
 
 
