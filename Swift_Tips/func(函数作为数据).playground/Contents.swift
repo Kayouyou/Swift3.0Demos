@@ -80,6 +80,20 @@ people.sorted {
 
 print(people)
 
+// 我们先来尝试对多个属性进行排序，要同时排序姓和名，我们可以使用标准库额lexicographicalCoompare方法来进行实现；这个方法接收两个序列，也就说，这个比较将顺序从两个序列中各取一个元素类进行比较，直到发现不相等的元素；所以我们可以用姓和名构建两数组，然后使用lexicographicalCompare来比较他们，我们还需要一个函数来执行这个比较
+
+people.sorted { (p0, p1) -> Bool in
+    
+    let left = [p0.last,p0.first]
+    let right = [p1.last,p1.first]
+    
+    return left.lexicographicallyPrecedes(
+    right){
+     $0.localizedCaseInsensitiveCompare($1) == .orderedAscending
+    }
+}
+
+//至此我们基本实现了原来的那个排序方法，不过有很大的改进空间，每次比较的时候都构建一个数组是非常满意效率的，比较操作是被写死的，而且使用方法我们经无法实现yearOfBirth的排序
 
 
 
