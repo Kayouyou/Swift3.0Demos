@@ -115,7 +115,23 @@ func sortDescriptor<Value,Key>(key:@escaping(Value) -> Key,_ areInIcreasingOrder
     return { areInIcreasingOrder(key($0),key($1)) }
 }
 
+// 通过这个我们可以用另外一种方式来定义sortByYear
+let sortByYearAlt:SortDescriptor<Person> = sortDescriptor(key: {
+    $0.yearOfBirth
+}, <)
 
+people.sorted(by: sortByYearAlt)
+print(people)
+
+//我们还可以为所有的Comparable类型定义一个重载版本的函数
+func sortedDescriptor<Value,Key>(key:@escaping (Value) -> Key) ->SortDescriptor<Value> where Key: Comparable{
+    
+    return {key($0) < key($1)}
+}
+
+let sortedByBirth:SortDescriptor<Person> = sortedDescriptor(key: {$0.yearOfBirth})
+
+//上面的两个 sortDescriptor返回都是与布尔值相关的函数，NSSortDescriptor类有一个初始化方法，它接受类似locaizedCaseInsensitiveCompare这样的比较函数，这类函数将返回三种值(升，降，等于)
 
 
 
