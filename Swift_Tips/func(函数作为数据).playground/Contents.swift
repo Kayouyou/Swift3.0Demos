@@ -97,11 +97,23 @@ people.sorted { (p0, p1) -> Bool in
 // 函数作为数据，排序描述符其实是一种描述对象顺序的方式！我们现在不去将信息存在类里，而是尝试定义一个函数来描述对象的顺序，最简单的定义是获取两个对象，当它们的顺序正确的时候范湖true，这个函数的类型正是标准库中sort(by:)和sorted(by:)所接受的参数的类型，我们通过一个通用的typealiaes来描述排序描述符：
  typealias SortDescriptor<Value> = (Value,Value)-> Bool
 
+//现在我们就可以比较person对象的描述符了，它可以比较出生年月，也可以比较姓的字符串
+
+let sortByYear:SortDescriptor<Person> = {
+    $0.yearOfBirth < $1.yearOfBirth
+}
+
+let sortByLastName:SortDescriptor<Person> = {
+    $0.last.localizedCaseInsensitiveCompare($1.last) == .orderedAscending
+}
+
+//除了手写这些描述符之外，我们还可以创建一个函数来生成他们，将相同的属性写两次并不太好；而且描述符本身比较无聊的，为了避免复制我们定义一个函数，它和NSSortDescriptor大体相同，但是不涉及运行时编程的接口；这个函数接受一个键和一个比较方法，返回排序的描述符(这里的描述符将是一个函数，而不是NSSortDescriptor)。在这里key将不在是一个字符串，而是一个函数；要比较两个键，我们使用areInIncreasingOrder函数，最后的到是一个函数；
 
 
-
-
-
+func sortDescriptor<Value,Key>(key:@escaping(Value) -> Key,_ areInIcreasingOrder:@escaping(Key,Key)->Bool) ->SortDescriptor<Value>{
+    
+    return { areInIcreasingOrder(key($0),key($1)) }
+}
 
 
 
