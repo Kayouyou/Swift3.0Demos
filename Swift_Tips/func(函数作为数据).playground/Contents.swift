@@ -230,6 +230,80 @@ protocol NewAlertViewDelegate {
 }
 
 // 正确的姿势应该是使用函数，而非代理
+// 如果代理协议中只定义一个函数的话，我们完全可以用一个存储回调函数的属性来替换原来的代理属性；
+
+class NewAlertView{
+    
+    var buttons:[String]
+    var buttonTapped:((Int)->())?
+    init(buttons:[String] = ["OK","Cancel"]) {
+        
+        self.buttons = buttons
+    }
+    
+    func fire(){
+        
+        buttonTapped?(1)
+        print("执行了")
+    }
+}
+
+struct TapLogger{
+    
+    var taps:[Int] = []
+    mutating func logTap(index: Int){
+        taps.append(index)
+        print("准备执行\(index),一共执行了\(taps.count)次")
+    }
+}
+
+let av = NewAlertView()
+var log = TapLogger()
+
+// 会报错：不允许部分应用“可变”方法，
+//av.buttonTapped = log.logTap
+
+// 报错原因是：上面的赋值的结果不明确，是logger需要复制一份呢？还是buttonTap需要改变它的原来的状态呢？
+// 修正这个错误：我们需要将赋值的右边用一个闭包封装起来，这让代码变得十分的清晰，我们想要捕获原来的logger变量（不是其中的值），然后我们将改变ta
+//log.logTap(index: 2)
+
+av.buttonTapped = { log.logTap(index: $0) }
+
+
+av.fire()
+av.fire()
+
+//现在回调函数的名字是buttonTapped，而真正实现它的方法是logTap()
+
+// 除使用方法外，我们还可以指定一个匿名函数
+av.buttonTapped = { print("Button\($0)was tapped") }
+av.fire()
+
+// 当和类打交道时就需要注意了，我们有一些忠告，需要注意循环引用
+
+class Test{
+    
+    func buttonTapped(atIndex:Int) {
+        print(atIndex)
+    }
+}
+
+let test = Test()
+av.buttonTapped = test.buttonTapped
+
+//上面的这个例子alertView 通过闭包强引用了test，但是test没有强引用alertView ，所以不存在引用循环
+
+// 但是如果是test是controller，引用了alertView，使用这种方式非常的容易引起循环引用，需要避免需要在闭包中使用捕获列表:
+av.buttonTapped = {
+    
+    [weak test] index in
+    test?.buttonTapped(atIndex: index)
+}
+
+
+
+
+
 
 
 
