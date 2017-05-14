@@ -133,6 +133,112 @@ let sortedByBirth:SortDescriptor<Person> = sortedDescriptor(key: {$0.yearOfBirth
 
 //上面的两个 sortDescriptor返回都是与布尔值相关的函数，NSSortDescriptor类有一个初始化方法，它接受类似locaizedCaseInsensitiveCompare这样的比较函数，这类函数将返回三种值(升，降，等于)
 
+func sortDescriptors<Value,Key>(key:@escaping(Value)->Key,ascending:Bool = true,_ comparator:@escaping (Key)->(Key)->ComparisonResult) -> SortDescriptor<Value>{
+
+    return {
+        
+        lhs,rhs in
+        let order:ComparisonResult = ascending ?.orderedAscending: .orderedDescending
+        return comparator(key(lhs))(key(rhs)) == order
+    }
+}
+
+// 到此我们就可以用简短清晰的多的方式来写sortByFirstName了；
+let sortByFirstName:SortDescriptor<Person> = sortDescriptors(key: {$0.first}, String.localizedCaseInsensitiveCompare)
+people.sorted(by: sortByFirstName)
+
+print(people)
+//现在SortDescriptor与 NSSortDescriptor拥有同样的表达能力，不过它是类型安全的，而且不依赖运行时编程；
+
+//我们现在只能用一个单一的SortDescriptor函数对数组进行排序，我们曾用NSArray.sortedArray(using)方法来用一组比较运算符对数组进行排序。我们可以很容易地为Array，甚至是Sequence协议添加一个相似的方法，不过我们需要添加两个两次，一次是可变版本，另一次是不可变版本
+
+//我们可以使用不同的策略，就可以避免添加多次的扩展，我们可以创建一个函数来将多个排序描述符合并为单个的排序描述符，它的工作方法和sortedAray(using)类型，首先它会使用第一个描述符，并检查比较结果，然后当结果相等时，再使用第二个；第三个描述符,直到用完
+
+func combine<Value>(sortDescriptorArr:[SortDescriptor<Value>]) -> SortDescriptor<Value>{
+    
+    return {
+        
+        lhs ,rhs in
+        
+        for areIncreasingOrder in sortDescriptorArr {
+            
+            if areIncreasingOrder(lhs,rhs) {
+                
+                return true
+            }
+            
+            if areIncreasingOrder(rhs,lhs) {
+                
+                return false
+            }
+        }
+        return false
+    }
+}
+
+// 使用这个新的描述符,最后我们可以把一开始的例子重写为这样:
+
+let combined : SortDescriptor<Person> = combine(sortDescriptorArr: [sortByLastName,sortByFirstName,sortByYear])
+people.sorted(by: combined)
+
+//最终,我们得到了一个与foundation中的版本在行为和功能上等价的实现方法,但是这个方法要更加安全,也更加符合Swift的语言习惯,因为Swift版本不依赖与运行时,所以编译器有机会对它进行更好的优化,另外,我们也可以使用它来对结构体或非OC的对象进行排序
+
+//这种方式的实质是将函数作为数据,我们将这些函数存储在数组里,并在运行时构建这个数组,浙江动态特性带到一个新的高度,这也是像swift这样的编译时就确定了静态类型的语言仍然能实现像是OC或者Ruby部分动态行为的一种方式
+
+
+//函数作为代理
+
+//1. foundation框架下的代理，针对类的
+protocol AlertViewDelegate: class {
+    
+    func buttonTapped(atIndex:Int)
+}
+
+class AlertView{
+    
+    var buttons:[String]
+    weak var delegate:AlertViewDelegate?
+    init(buttons:[String] = ["OK","Cancel"]) {
+        self.buttons = buttons
+    }
+    
+    func fire(){
+        delegate?.buttonTapped(atIndex: 1)
+    }
+}
+
+
+//以上的模式对处理类的时候非常的好用，因为代理被标记为weak，所以我们不用担心引用循环：
+class viewController: AlertViewDelegate{
+    
+    init() {
+        
+        let av = AlertView(buttons: ["OK","Cancel"])
+        av.delegate = self
+    }
+
+    func buttonTapped(atIndex: Int) {
+    
+    }
+}
+
+//但是如果我们也想让结构体来实现代理协议，这是不可能的，因为这个协议针对的是类
+//  结构体代理，我们放宽协议让它支持结构体，但是当使用类时很容易造成循环引用，使用结构体时原来的值不会改变，一句话在代理和协议的模式中并不适合使用结构体
+
+protocol NewAlertViewDelegate {
+  mutating  func buttonTapped(atIndex:Int)
+}
+
+// 正确的姿势应该是使用函数，而非代理
+
+
+
+
+
+
+
+
+
 
 
 
