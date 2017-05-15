@@ -300,13 +300,55 @@ av.buttonTapped = {
     test?.buttonTapped(atIndex: index)
 }
 
+// inout 参数：我们在inout参数前使用&,它其实的作用是值传递，然后复制回来，并不是传递引用；
 
+func increment(value:inout Int){
+    
+    value += 1
+    
+}
 
+var i = 0
+increment(value: &i)
 
+//如果i是let，它就不能作为一个value了，因为我们不能改变let变量，所以将它用做inout也是没有意义的，我们只能使用那些可更改的value
+let y: Int = 0
+//会报错，因为let修饰的不能更改
+//increment(value: &y)
 
+//除了变量，我们还看传入其他的东西，举个例子：如果数组是用var标记的。我们可以传入数组小标:
+var array = [1,2,3]
+increment(value: &array[0])
+print(array)
 
+//实际上，对于所有的下标，只有它同时拥有get和 set方法，这都是适用的，类似的，我们也可以将属性值用于value，只要它们的get  set都被定义了
+struct Point{
+    
+    var x : Int
+    var y : Int
+    private(set) var z :Int
 
+}
 
+var point = Point(x: 0, y: 0,z: 1)
+
+increment(value: &point.x)
+
+//如果一个属性只读的，只有get，我们将不能将其用于inout参数
+
+extension Point{
+    
+    //计算属性，扩展里不能添加存储属性
+    var squaredDistance:Int{
+        return x*x + y*y
+    }
+
+}
+//以下的代码会报错，因为不能给只用get的属性添加inout
+//increment(value: &point.squaredDistance)
+
+//由于 z是对内可读可写，对外是只读的属性，只读属性不能适用于inout属性1
+increment(value: &point.z)
 
 
 
