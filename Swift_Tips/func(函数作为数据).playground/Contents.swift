@@ -1,7 +1,7 @@
 //: Playground - noun: a place where people can play
 
 import UIKit
-
+import CoreLocation
 // swift 将函数作为参数传递，swift的排序就很简单
 
 let myArray = [3,4,2,1]
@@ -394,9 +394,22 @@ fun()
 fun()
 // 这个操作为我们打开了充满惊喜的未知世界的大门，在测试的时候，每次运行上面的代码都打印不同的值，想要搞清楚为什么，你需要明白你传进去的到底是什么，当你为一个惨数添加&时，你看调用的是安全swift的inout语义，你也可能把你可怜的变量强制转化为不安全的指针，当处理不安全的指针的时候，我们需要非常小心变量的生命周期！
 
+// 计算属性和下标
+struct GPSTrack{
+    
+    //内部可读写 private(set)
+     var records:[(CLLocation,Date)] = []
+}
 
+//想要获取GPS追踪所有记录的日期值，我们可以添加一个计算属性
+extension GPSTrack{
 
+    var dates:[Date]{
+        return records.map{$0.1}
+    }
+}
 
+//因为我们没有指定setter，所以dates只能是只读的，它的结果不会被缓存，每次当你调用dates属性时，结果会被计算一遍，
 
 
 
