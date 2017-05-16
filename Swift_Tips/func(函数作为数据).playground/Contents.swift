@@ -412,6 +412,38 @@ extension GPSTrack{
 //因为我们没有指定setter，所以dates只能是只读的，它的结果不会被缓存，每次当你调用dates属性时，结果会被计算一遍，
 
 
+// 延迟存储属性,它会自动声明为mutating，因此这个属性也必须被声明为var
+// 延迟属性和存储属性 与 计算属性的不同：前两者不能申明在扩展中，我们需要在闭包中访问的实例成员变量需要使用self.
+
+struct PPoint{
+    
+    var x:Double{
+        
+        didSet{
+            
+            print("即将改变x的值")
+        }
+        
+    }
+    var y:Double = 0
+    lazy var distanceFromOrigin: Double = self.x*self.x + self.y*self.y
+    
+    init(x:Double,y:Double) {
+        self.x = x
+        self.y = y
+    }
+}
+
+//当我们创建一个点时，可以访问distanceFromOrigin属性，这将会计算出值，并存储起来等待重用，不过，如果改变x的值，这个变化将不会反应在idstanceFormOrigin中
+
+var pp = PPoint(x: 3, y: 4)
+pp.distanceFromOrigin
+
+pp.x += 10
+pp.distanceFromOrigin
+
+
+
 
 
 
