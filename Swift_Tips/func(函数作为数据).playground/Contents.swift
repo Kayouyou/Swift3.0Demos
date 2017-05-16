@@ -348,10 +348,51 @@ extension Point{
 //increment(value: &point.squaredDistance)
 
 //由于 z是对内可读可写，对外是只读的属性，只读属性不能适用于inout属性1
-increment(value: &point.z)
+//increment(value: &point.z)
+
+//运算符也接收inout值，但是为了简化，在调用的时候我们不需要加上&符号，简单地使用lvalue就可以了，自增运算符在swift3.0倍移除了，但是我们可以把它加回来
+
+postfix func ++(x:inout Int){
+    
+    x += 1
+}
+
+point.x++
+
+//可变运算符甚至还可以与可选链一起使用，这不仅适用于普通的可选值，对字典下标也依然可用，
+var dictionary = ["one":1]
+dictionary["one"]?++
+
+//在字典查找返回nil时，++ 操作符不会被执行
+// 编译器可能会把inout变量优化成引用传递，而非传入和传出复制。不过文档已经很明确的支出我们不应该依赖inout的这个行为
+
+// 嵌套函数和inout，嵌套函数中依然可以使用inout参数，swift依然保证它是安全的；但是你不能让这个inout参数逃逸，因为inout的值会在函数返回之前复制回去
 
 
+// & 不意味 inout的情况
+// 说到不安全，& 除了在将变量传递给inout之外，还可以用来将变量转换为一个不安全的指针；
+// 如果一个函数接收unsafeMutablePointer作为参数，你可以用和inout参数类似的方法将一个var变量前面加上& 传递给它，在这种情况下，你确实在传递引用，更确切的说在传递指针;
+func incref(pointer:UnsafeMutablePointer<Int>) ->()->Int{
+    
+    //将指针的复制存储在闭包中
+    return {
+        pointer.pointee += 1
+        return pointer.pointee
+    }
+}
 
+// swift的数组可以无缝隐士的退化为指针，这使得swift和C的一起使用的时候回非常的方便，现在假设你和上面类似的作用域情况下，传入一个数组
+let fun:() -> Int
+
+do{
+    
+    var array = [0]
+    fun = incref(pointer:&array)
+}
+fun()
+fun()
+fun()
+// 这个操作为我们打开了充满惊喜的未知世界的大门，在测试的时候，每次运行上面的代码都打印不同的值，想要搞清楚为什么，你需要明白你传进去的到底是什么，当你为一个惨数添加&时，你看调用的是安全swift的inout语义，你也可能把你可怜的变量强制转化为不安全的指针，当处理不安全的指针的时候，我们需要非常小心变量的生命周期！
 
 
 
