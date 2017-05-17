@@ -512,8 +512,37 @@ extension Sequence where Iterator.Element:Hashable{
 
 "hello".characters.frequencies
 
+// 自动闭包
+// 我们实现一个类似&&的操作符的函数
 
+func and(_ l:Bool,_ r:()->Bool) -> Bool{
+    
+    guard l else {
+        return false
+    }
+    return r()
+}
 
+let events = [1,2,3]
+
+and(events.isEmpty) { () -> Bool in
+    
+    events[0] > 10
+}
+
+// 上面的函数首先对l进行检查，如果l的值为flase的话就直接返回false，l为true时才会返回闭包r的求值结果，它要比&&操作符要复杂一些；因为右边的操作符现在必须为一个函数
+
+// 在swift中有一个很好的特性，能让代码更加漂亮我们可以使用autoclosure标注来自动的为一个参数创建闭包
+
+func  with(_ l: Bool,_ r:@autoclosure ()->Bool) -> Bool{
+    
+    guard l else {
+        return false
+    }
+    return r()
+}
+//第二个参数我们不需要封装到闭包中去了，只需要像普通edbool值那样来使用！
+with(events.isEmpty, events[0] > 10)
 
 
 
