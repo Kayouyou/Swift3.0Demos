@@ -442,9 +442,41 @@ pp.distanceFromOrigin
 pp.x += 10
 pp.distanceFromOrigin
 
+// swift中Range表示的是有界区间，如果我们想表示一个半有界区间，我们创建两个新的结构体
+struct RangeStart<I>{let start:I}
+struct RangeEnd<I>{let end:I}
+
+//我们可以定义两个简单的操作符来创建半有区间，接收一个操作数
 
 
+let fib = [0,1,2,3,4,5,6]
 
+postfix operator ..<
+postfix func ..<<I>(lhs:I) -> RangeStart<I>{
+    
+    return RangeStart(start: lhs)
+}
+
+prefix operator ..<
+prefix func ..<<I>(rhs:I)  -> RangeEnd<I>{
+    
+    return RangeEnd(end: rhs)
+}
+
+//有了这两个操作符，我们可以把RangeStart(x)写作 x..<
+
+extension Collection{
+    
+    subscript(r:RangeStart<Index>) -> SubSequence{
+        return suffix(from: r.start)
+    }
+    subscript(r:RangeEnd<Index>) -> SubSequence{
+        return prefix(upTo: r.end)
+    }
+}
+
+let res = fib[2..<]
+print(res)
 
 
 
