@@ -391,7 +391,6 @@ do{
 }
 fun()
 fun()
-fun()
 // 这个操作为我们打开了充满惊喜的未知世界的大门，在测试的时候，每次运行上面的代码都打印不同的值，想要搞清楚为什么，你需要明白你传进去的到底是什么，当你为一个惨数添加&时，你看调用的是安全swift的inout语义，你也可能把你可怜的变量强制转化为不安全的指针，当处理不安全的指针的时候，我们需要非常小心变量的生命周期！
 
 // 计算属性和下标
@@ -443,8 +442,13 @@ pp.x += 10
 pp.distanceFromOrigin
 
 // swift中Range表示的是有界区间，如果我们想表示一个半有界区间，我们创建两个新的结构体
-struct RangeStart<I>{let start:I}
-struct RangeEnd<I>{let end:I}
+struct RangeStart<I>{
+    let start:I
+}
+
+struct RangeEnd<I>{
+    let end:I
+}
 
 //我们可以定义两个简单的操作符来创建半有区间，接收一个操作数
 
@@ -452,13 +456,13 @@ struct RangeEnd<I>{let end:I}
 let fib = [0,1,2,3,4,5,6]
 
 postfix operator ..<
-postfix func ..<<I>(lhs:I) -> RangeStart<I>{
+postfix func ..< <I>(lhs:I) -> RangeStart<I>{
     
     return RangeStart(start: lhs)
 }
 
 prefix operator ..<
-prefix func ..<<I>(rhs:I)  -> RangeEnd<I>{
+prefix func ..< <I>(rhs:I)  -> RangeEnd<I>{
     
     return RangeEnd(end: rhs)
 }
@@ -477,6 +481,39 @@ extension Collection{
 
 let res = fib[2..<]
 print(res)
+
+// 下标进阶
+extension Dictionary {
+    
+    subscript(key:Key, or defaultValue:Value) -> Value{
+        get{
+            return self[key] ?? defaultValue
+        }
+        set(newValue){
+            self[key] = newValue
+        }
+    }
+}
+// 上面的方法可以让我们在字典中进行带默认值得查找
+
+//通过以上的方法可以让我们写出非常短的函数，用于计算一个序列中元素出现的次数，我们创建一个空的字段，然后对于我们遇到额每一个元素进行次数加一，如果这个元素没有存在于字典中，那么默认值就是0
+extension Sequence where Iterator.Element:Hashable{
+    
+    var frequencies:[Iterator.Element: Int]{
+        
+        var result:[Iterator.Element: Int] = [:]
+        for x in self {
+            
+            result[x,or:0] += 1
+        }
+        return result
+    }
+}
+
+"hello".characters.frequencies
+
+
+
 
 
 
