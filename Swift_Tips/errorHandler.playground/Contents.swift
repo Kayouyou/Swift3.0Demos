@@ -146,6 +146,30 @@ if let number = try? methodThrowsWhenPassingNegative(num: 10) {
 // 值得一提的是在一个可以throw的方法里，我们永远不应该返回一个optional的值，因为try?使用的话，这个Optional的返回值会被再次的包装一层的Optional，使用双重的可选值是非常容易产生错误的，也十分的费解！
 
 
+// 还有一个关键字 rethrows，其实它和throw做的事情没有太多的不同，但是rethrows一般用在参数中含有可以throws的方法的高阶函数中，来表示它既可以接收普通函数，有额可以接收一个能throws的函数作为参数，
+
+func methodThrows(num: Int) throws {
+    
+    if num < 0 {
+        
+        throw E.Negative
+    }
+
+}
+
+
+func methodRethrows(num: Int,f:(Int) throws -> ()) rethrows{
+    
+    try f(num)
+}
+
+do {
+    try methodRethrows(num: 1, f: methodThrows)
+} catch _ {
+    
+}
+
+// 在这种情况下，我们把rethrows改为throws这段代码依然可以执行，但是他们还是有区别的；简单的理解你可以吧rethrowss当做throws的子类，它可以用来重载那些被标记为throws的方法或者参数，或者用来满足被标记为throws的协议，但是反过来不行；如果你拿不准怎么使用的话，就请先记住你要在throws另外一个throws时，应该将前者改为rethrows。这样在不失灵活性的同时保证代码的可读性和准确性，标准库中的map,reduce等函数式特点鲜明的函数都采用retrowsde 方式来扩展使用范围
 
 
 
