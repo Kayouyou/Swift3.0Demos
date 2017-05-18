@@ -118,6 +118,32 @@ case let .failure(error):
     print(error)
 }
 
+// 对于swift中的错误处理我们更加清晰一层：对于同步API使用异常机制；对于异步的API使用泛型枚举；
+
+// 关于try和throws 扩展：
+// try ：try!表示强制执行，这代表你确定知道这次调用不会抛出异常；如果在调用中出现了异常，你的程序就会崩溃；这和我们使用optional值用！进行强制解包的行为是一致的。另外我们也可以在try后面加上？来进行尝试性的运行，try？会返回一个Optional的值，如果运行成功，没有抛出异常的话，它会包含这个语句的返回值，否则将为nil，和其他的返回的Optional的方法类似，一个典型的try？的应用场景和if let这样的语句搭配使用的，不过如果你用了try？的话，这就意味着你无视了错误的具体类型：
+enum E:Error{
+    case Negative
+    
+}
+
+func methodThrowsWhenPassingNegative(num :Int) throws -> Int{
+    
+    if num < 0 {
+        throw E.Negative
+    }
+    
+    return num
+}
+
+if let number = try? methodThrowsWhenPassingNegative(num: 10) {
+    
+    print(type(of: number))// 这里是 Optional<Int>
+}else{
+    print("failed")
+}
+
+// 值得一提的是在一个可以throw的方法里，我们永远不应该返回一个optional的值，因为try?使用的话，这个Optional的返回值会被再次的包装一层的Optional，使用双重的可选值是非常容易产生错误的，也十分的费解！
 
 
 
