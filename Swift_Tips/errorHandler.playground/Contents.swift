@@ -79,6 +79,51 @@ catch{
     print("未知错误")
 }
 
+// swift的异常机制并不是十全十美的，最大ed问题是类型安全，不借助于文档，我们无法得知所抛出的异常的类型；
+// 另外一个限制是：对于非同步的API来说，抛出异常是不可用的，异常只是一个同步方法中专用的处理机制；
+// 一种比较常见的方法是借助于enum,作为swift的一个重要特性，枚举类型现在可以与其他的实例进行绑定的，我们还可以返回枚举类型，然后在枚举类型中定义成功和错误的状态，并分别将合适 的对象与枚举值进行挂关联：
+
+func doSomethingParam(param:AnyObject)-> Result<String>{
+    
+    // 做一些操作
+    
+    let success = false
+    
+    if success {
+        
+        return Result.success("成功了")
+    }else{
+        
+        return Result.failure(FileError.fileDoseNotExist)
+    }
+    
+}
+
+// 使用时，利用switch 的let来从枚举值中将结果取出即可:
+class man{
+    
+    init() {
+    }
+}
+
+let m = man()
+let result = doSomethingParam(param:m)
+switch result {
+case let .success(ok):
+    
+    print(ok)
+    
+case let .failure(error):
+    
+    print(error)
+}
+
+
+
+
+
+
+
 
 
 
