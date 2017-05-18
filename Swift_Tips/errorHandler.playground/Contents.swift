@@ -44,4 +44,47 @@ do {
 
 // 由于swift的错误是无类型的，所以说明就显得很重要；
 
+// 错误处理实例
+
+enum LoginError:Error{
+    
+    case UserNotFound,UserPWDNotMatch
+}
+
+// throws标记后，调用必须使用do catch
+func login(usr:String,passWord:String) throws{
+    
+    let users = ["mark":"123","lucy":"456"]
+
+    if !users.keys.contains(usr) {
+        
+       throw LoginError.UserNotFound
+    }
+    
+    if users[usr] != passWord {
+        
+        throw LoginError.UserPWDNotMatch
+    }
+    print("login successfully")
+}
+
+do {
+    try login(usr: "jim", passWord: "123")
+} catch LoginError.UserNotFound {
+    print("用户不存在")
+} catch LoginError.UserPWDNotMatch{
+    print("用户密码错误")
+}
+catch{
+    print("未知错误")
+}
+
+
+
+
+
+
+
+
+
 
