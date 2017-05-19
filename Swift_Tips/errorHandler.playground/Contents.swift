@@ -172,6 +172,129 @@ do {
 // 在这种情况下，我们把rethrows改为throws这段代码依然可以执行，但是他们还是有区别的；简单的理解你可以吧rethrowss当做throws的子类，它可以用来重载那些被标记为throws的方法或者参数，或者用来满足被标记为throws的协议，但是反过来不行；如果你拿不准怎么使用的话，就请先记住你要在throws另外一个throws时，应该将前者改为rethrows。这样在不失灵活性的同时保证代码的可读性和准确性，标准库中的map,reduce等函数式特点鲜明的函数都采用retrowsde 方式来扩展使用范围
 
 
+// 桥接错误
+
+// OC中的NSError参数被导入了Error协议，所以一般来说你不再需要直接和NSError打交道了，因为Error只有一个属性，那就是localizedDescription，对于纯swift的错误，这个属性没有被重写，运行的时候将从错误类型名中生成一个默认的文本描述；如果你想要这些错误值展示给用户的话，通过重写这个属性来提供有意义的描述会是更好的实践！
+
+// 如果你将一个纯swift的错误传递给OC的方法，类似地，它将被桥接为NSError，因为所有的NSError对象必须有一个domain字符串和一个整数的错误代码code，运行时将提供默认值，它会使用类型名作为domain的名字，使用从0开始的枚举的序号作为错误代码。如果有需要，你也可以让你的错误类型遵守CustomNSError协议来提供更好的实现。
+
+// 比如，我们可以扩展ParseError:
+
+enum ParseError: Error{
+    
+    case wrongEncoding
+    case warning(line:Int,message:String)
+}
+
+extension ParseError:CustomNSError{
+    
+    static let errorDomain = "io.objc.parseError"
+    
+    var errorCode:Int{
+        
+        switch self {
+        case .wrongEncoding:
+            return 100
+        case .warning(line: _, message: _):
+            return 200
+        }
+    }
+    
+    var errorUserInfo: [String: Any]{
+        
+        return [:]
+    }
+}
+
+//类似地，你可以实现下面的协议，来让你的错误拥有更有意义的描述，并更好的遵循Cocoa的习惯
+
+// LocalizedError 一个提供一个本地化的信息，来表示错误为什么发生，从错误中恢复的提示，以及额外的帮组文本
+// RecoverableError 描述一个用户可以恢复的错误，展示一个或多个recoveryOptions，并在用户要求的时候执行恢复
+
+// 错误和函数参数
+
+extension Int{
+    
+    var isPrime: Bool{
+        
+        if self < 2 {
+         
+            return false
+        }
+        return true
+    }
+}
+
+func checkPrimes(_ numbers:[Int]) -> Bool{
+    
+    for  number in numbers {
+        
+        guard number.isPrime else {
+            return false
+        }
+    }
+    return true
+}
+
+checkPrimes([1,2,3])
+checkPrimes([2,3,4])
+
+// 以上的函数是对于序列的迭代，与实际决定一个元素是否满足条件的逻辑进行混合，对于这种模式，类似于map或者filter，我们可以创建一个抽象的函数出来;我们可以为sequence添加一个all的函数，接收一个执行条件判断是否满足的函数作为参数；返回的是bool值
+
+//extension Sequence{
+//    
+//    func all(condition:(Iterator.Element) -> Bool) -> Bool {
+//        
+//        for element in self {
+//            
+//            guard condition(element) else {
+//                
+//                return false
+//            }
+//        }
+//
+//        return true
+//    }
+//}
+
+
+//  如果我们传入的是一个可以抛出异常的的闭包呢？
+// 使用rethrows,可以避免写出两个版本的all，rethrows可以高数编译器这个函数只会在它的参数函数抛出错误的时候抛出错误，对于那些向函数中传递的是不会抛出错误的check函数的调用，
+
+extension Sequence{
+    
+    func all(condition:(Iterator.Element) throws -> Bool) rethrows -> Bool {
+        
+        for element in self {
+            
+            guard try condition(element) else {
+                
+                return false
+            }
+        }
+        return true
+    }
+
+}
+
+func checkIsPrime2(_ numbers:[Int]) -> Bool{
+    
+    return numbers.all(condition: { (ele) -> Bool in
+        
+        return ele.isPrime
+    })
+}
+
+checkIsPrime2([2,2,3])
+
+
+
+
+
+
+
+
+
 
 
 
