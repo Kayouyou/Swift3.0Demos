@@ -20,7 +20,11 @@ enum FileError:Error {
 //swift抛出和捕获异常
 func contents(ofFile fileName:String)throws -> String{
 
-    
+    // 下面是伪代码，只是示范defer的使用场景之一
+//    let file = open("test.text")
+//    defer {
+//        close(file)
+//    }
     
     
     
@@ -287,11 +291,56 @@ func checkIsPrime2(_ numbers:[Int]) -> Bool{
 
 checkIsPrime2([2,2,3])
 
+// defer 进行清理工作
+// 其实很多的语言有try finally这样的结构，其中finally所围绕的代码块是将一定会在函数返回时被执行，而不论最后是否有错误被抛出！swift中的defer和它类似，但是具体的做法稍微不同，defer会在作用域结束时被执行，而不管作用域结束的原因是什么，defer与finally不一样ed地方在于前者不需要再之前出现try或do这样的语句；你可以很灵活的把它放在代码需要的位置：
 
+// 比如在contents方法中添加defer操作，
 
+// 标准库多次在需要给一个计数器加一并且返回这个计数器之前的值得时候使用了defer，这让我们不用为了返回值而去特意的创建一个本地变量，这种情况下defer本质上等同于已被移除的后自增运算符（i++）
 
+/**
 
+struct EnumeratedIterator<Base: IteratorProtocol>: IteratorProtocol, Sequence {
+    internal var _base: Base
+    internal var _count: Int
+    ...
+    func next() -> Element? {
+        guard let b = _base.next() else {
 
+            return nil
+        }
+        defer { _count += 1 }
+        return (offset: _count, element: b)
+    }
+}
+
+*/
+
+// 如果相同的作用域中有多个defer块，它们将被按照逆序执行，你可以吧这种行为现象为一个栈，一开始，你看你会觉得逆序执行的defer很奇怪；
+// 伪代码示例：
+
+/**
+ 
+guard let database = openDatabase(...)else {
+    return
+}
+defer {
+    closeDatabase(database)
+}
+guard let connection = openConnection  else {
+    return
+}
+defer {
+    closeConnection(connection)
+}
+guard let result = runQuery(connection) else {
+    return
+}
+
+*/
+
+// 打个比方：在runQuery的时候发生了错误，我们首先要先断开与数据库的链接，然后关闭数据库，因为defer是逆序执行的，所以一切都显得很自然，defer逆序清理！
+// 有些情况下你的defer可能会没有被调用，当你的程序遇到一段错误，或者发生严重的错误或强制解包一个nil，所有的执行都将会被立即挂起！
 
 
 
