@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6Im-Xe-JQA">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Title-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Swift_autolayoutTip" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gsL-MI-IYd">
+                                <rect key="frame" x="10" y="64" width="355" height="80"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wlf-cj-mvM">
+                                        <rect key="frame" x="18" y="36" width="319" height="40"/>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maximum Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ff9-dR-GTg">
+                                        <rect key="frame" x="104.5" y="5" width="145.5" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="lxT-gd-jSQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="ff9-dR-GTg" firstAttribute="top" secondItem="gsL-MI-IYd" secondAttribute="top" constant="5" id="6kI-ok-9o0"/>
+                                    <constraint firstItem="wlf-cj-mvM" firstAttribute="leading" secondItem="gsL-MI-IYd" secondAttribute="leading" constant="20" id="6n2-vB-Lxa"/>
+                                    <constraint firstItem="wlf-cj-mvM" firstAttribute="top" secondItem="ff9-dR-GTg" secondAttribute="bottom" constant="10" id="8co-FP-j6U"/>
+                                    <constraint firstItem="ff9-dR-GTg" firstAttribute="centerX" secondItem="gsL-MI-IYd" secondAttribute="centerX" id="9Fb-6R-DOy"/>
+                                    <constraint firstAttribute="height" constant="80" id="Nwr-mq-rjs"/>
+                                    <constraint firstAttribute="bottom" secondItem="wlf-cj-mvM" secondAttribute="bottom" constant="5" id="dQe-wT-YDg"/>
+                                    <constraint firstAttribute="trailing" secondItem="wlf-cj-mvM" secondAttribute="trailing" constant="20" id="qAJ-eI-9Xp"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DsZ-Ri-OIs">
+                                <rect key="frame" x="10" y="154" width="355" height="503"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="DsZ-Ri-OIs" secondAttribute="trailing" constant="10" id="08Y-GV-NgZ"/>
+                            <constraint firstItem="gsL-MI-IYd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="25T-le-hQ8"/>
+                            <constraint firstAttribute="trailing" secondItem="gsL-MI-IYd" secondAttribute="trailing" constant="10" id="J1B-qt-HGN"/>
+                            <constraint firstItem="DsZ-Ri-OIs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="dVL-od-r6V"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DsZ-Ri-OIs" secondAttribute="bottom" constant="10" id="dsq-nY-rgX"/>
+                            <constraint firstItem="DsZ-Ri-OIs" firstAttribute="top" secondItem="gsL-MI-IYd" secondAttribute="bottom" constant="10" id="llu-0Y-gTA"/>
+                            <constraint firstItem="gsL-MI-IYd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="qSY-AM-Vq5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="hr7-j1-lf8">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="e9R-jf-K0t"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="edgeConstraint" destination="llu-0Y-gTA" id="feS-iv-fhv"/>
+                        <outlet property="wrapperView" destination="gsL-MI-IYd" id="Nue-uf-6NV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="138.98050974512745"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ea3-e7-54f">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Im-Xe-JQA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="93V-81-kF7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="oSg-2Y-vUy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k6U-nm-dOX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
