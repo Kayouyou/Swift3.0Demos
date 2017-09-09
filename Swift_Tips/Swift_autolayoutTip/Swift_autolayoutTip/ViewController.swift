@@ -41,6 +41,10 @@ class ViewController: UIViewController {
             edgeConstraint.isActive       = false
             zeroHeightConstraint.isActive = true
         }
+        
+        UIView.animate(withDuration: 5) {
+            self.view.layoutIfNeeded()
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gsL-MI-IYd">
-                                <rect key="frame" x="10" y="64" width="355" height="51"/>
+                                <rect key="frame" x="10" y="69" width="355" height="51"/>
                                 <subviews>
                                     <slider opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wlf-cj-mvM">
                                         <rect key="frame" x="-2" y="21" width="359" height="31"/>
@@ -46,19 +46,19 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DsZ-Ri-OIs">
-                                <rect key="frame" x="10" y="125" width="355" height="532"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="10" y="130" width="355" height="527"/>
+                                <color key="backgroundColor" red="0.043137254899999998" green="0.63529411759999999" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="DsZ-Ri-OIs" secondAttribute="trailing" constant="10" id="08Y-GV-NgZ"/>
                             <constraint firstItem="gsL-MI-IYd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="25T-le-hQ8"/>
+                            <constraint firstItem="DsZ-Ri-OIs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="66" id="4uQ-Jg-xnh"/>
                             <constraint firstAttribute="trailing" secondItem="gsL-MI-IYd" secondAttribute="trailing" constant="10" id="J1B-qt-HGN"/>
+                            <constraint firstItem="gsL-MI-IYd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="WJU-xs-jUP"/>
                             <constraint firstItem="DsZ-Ri-OIs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="dVL-od-r6V"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DsZ-Ri-OIs" secondAttribute="bottom" constant="10" id="dsq-nY-rgX"/>
-                            <constraint firstItem="DsZ-Ri-OIs" firstAttribute="top" secondItem="gsL-MI-IYd" secondAttribute="bottom" constant="10" id="llu-0Y-gTA"/>
-                            <constraint firstItem="gsL-MI-IYd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="qSY-AM-Vq5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="hr7-j1-lf8">
@@ -69,7 +69,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="edgeConstraint" destination="llu-0Y-gTA" id="feS-iv-fhv"/>
+                        <outlet property="edgeConstraint" destination="4uQ-Jg-xnh" id="GzZ-eH-ofc"/>
                         <outlet property="myslider" destination="wlf-cj-mvM" id="gVz-IM-DiN"/>
                         <outlet property="sliderName" destination="ff9-dR-GTg" id="nJ5-Pb-7EK"/>
                         <outlet property="wrapperView" destination="gsL-MI-IYd" id="Nue-uf-6NV"/>
